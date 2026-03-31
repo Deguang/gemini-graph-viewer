@@ -25,11 +25,11 @@ A professional, high-performance browser extension designed to render Mermaid di
 
 ## 🚀 Installation
 
-1.  **Download** the project folder to your local machine.
-2.  Open your browser (Chrome, Edge, or any Chromium-based browser) and navigate to `chrome://extensions/`.
-3.  Enable **Developer mode** using the toggle in the top-right corner.
-4.  Click **Load unpacked** and select the extension folder: `/Users/gztd-03-01449/Documents/mySpace/gemini_mermarid`.
-5.  Navigate to [Gemini](https://gemini.google.com) and start generating diagrams!
+1.  **Install from Chrome Web Store**: [Gemini Graph (Flowchart) Split-Viewer](https://chromewebstore.google.com/detail/ajboihpfgkpcpeibiahobpdogdbbmfpn)
+2.  **Manual Installation (Developers)**:
+    - Download this repo.
+    - Go to `chrome://extensions/` and enable **Developer mode**.
+    - Click **Load unpacked** and select the extension folder.
 
 ## 🛠 Supported Diagram Types
 
