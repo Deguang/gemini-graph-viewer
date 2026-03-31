@@ -31,6 +31,13 @@ A professional, high-performance browser extension designed to render Mermaid di
     - Go to `chrome://extensions/` and enable **Developer mode**.
     - Click **Load unpacked** and select the extension folder.
 
+## 🌐 Project Website (Landing Page)
+Visit our [GitHub Pages site](https://your-username.github.io/gemini_mermarid/) for previews and the full Privacy Policy.
+
+## 🛠 Automation Tools
+- `npm run zip`: Automatically package the extension into the `release/` folder.
+- `npm run release`: One-click release to GitHub (requires gh cli).
+
 ## 🛠 Supported Diagram Types
 
 Supports all major Mermaid syntaxes frequently used by Gemini:

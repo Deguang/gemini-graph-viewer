@@ -25,11 +25,20 @@
 
 ## 🚀 安装指南
 
-1.  **下载** 项目文件夹到本地。
-2.  打开浏览器（Chrome、Edge 或其他 Chromium 内核浏览器），进入 `chrome://extensions/`（扩展程序）。
-3.  开启右上角的 **“开发者模式”**。
-4.  点击 **“加载已解压的扩展程序”**，选择项目目录：`/Users/gztd-03-01449/Documents/mySpace/gemini_mermarid`。
-5.  打开 [Gemini](https://gemini.google.com) 即可开始体验！
+1.  **从 Chrome 网上应用店安装 (推荐)**: [Gemini Graph (Flowchart) Split-Viewer](https://chromewebstore.google.com/detail/ajboihpfgkpcpeibiahobpdogdbbmfpn)
+2.  **开发者手动安装**:
+    - 下载或克隆本仓库到本地。
+    - 打开浏览器，进入 `chrome://extensions/`（扩展程序）。
+    - 开启右上角的 **“开发者模式”**。
+    - 点击 **“加载已解压的扩展程序”**，选择项目目录。
+
+## 🌐 项目官网 (Landing Page)
+您可以访问我们的 [GitHub Pages 官网](https://your-username.github.io/gemini_mermarid/) 查看更多预览和隐私政策。
+
+## 🛠 自动化工具
+本项目内置了工程化脚本：
+- `npm run zip`: 自动打包插件到 `release/` 目录。
+- `npm run release`: 一键发布到 GitHub Release（需安装 gh cli）。
 
 ## 🛠 支持的图表类型
 
