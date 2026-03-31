@@ -1,0 +1,68 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#7b72f0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <clipPath id="cp">
+      <rect x="0" y="0" width="512" height="512" rx="108"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="512" height="512" rx="108" fill="#1c1b2e"/>
+
+  <!-- Left pane (code) -->
+  <rect x="0" y="0" width="254" height="512" fill="#0e0d1a" clip-path="url(#cp)"/>
+  <!-- Right pane (preview) -->
+  <rect x="258" y="0" width="254" height="512" fill="#111022" clip-path="url(#cp)"/>
+
+  <!-- Divider -->
+  <line x1="256" y1="24" x2="256" y2="488" stroke="#6c63ff" stroke-width="2.5" stroke-dasharray="7 6" stroke-opacity="0.55"/>
+
+  <!-- Code lines (left) -->
+  <rect x="36" y="80"  width="80"  height="10" rx="5"   fill="#6c63ff" opacity="0.9"/>
+  <rect x="44" y="102" width="66"  height="9"  rx="4.5" fill="#3d3a6e" opacity="0.75"/>
+  <rect x="44" y="121" width="94"  height="9"  rx="4.5" fill="#3d3a6e" opacity="0.6"/>
+  <rect x="36" y="143" width="74"  height="9"  rx="4.5" fill="#6c63ff" opacity="0.7"/>
+  <rect x="44" y="162" width="82"  height="9"  rx="4.5" fill="#3d3a6e" opacity="0.6"/>
+  <rect x="44" y="181" width="54"  height="9"  rx="4.5" fill="#3d3a6e" opacity="0.5"/>
+  <rect x="36" y="203" width="88"  height="9"  rx="4.5" fill="#6c63ff" opacity="0.65"/>
+  <rect x="44" y="222" width="68"  height="9"  rx="4.5" fill="#3d3a6e" opacity="0.5"/>
+  <rect x="44" y="241" width="76"  height="9"  rx="4.5" fill="#3d3a6e" opacity="0.4"/>
+  <rect x="36" y="263" width="62"  height="9"  rx="4.5" fill="#6c63ff" opacity="0.55"/>
+  <rect x="44" y="282" width="78"  height="9"  rx="4.5" fill="#3d3a6e" opacity="0.4"/>
+  <rect x="44" y="301" width="58"  height="9"  rx="4.5" fill="#3d3a6e" opacity="0.35"/>
+  <rect x="36" y="323" width="86"  height="9"  rx="4.5" fill="#6c63ff" opacity="0.45"/>
+  <rect x="44" y="342" width="64"  height="9"  rx="4.5" fill="#3d3a6e" opacity="0.35"/>
+  <rect x="44" y="361" width="72"  height="9"  rx="4.5" fill="#3d3a6e" opacity="0.3"/>
+  <rect x="36" y="383" width="56"  height="9"  rx="4.5" fill="#6c63ff" opacity="0.35"/>
+  <rect x="44" y="402" width="74"  height="9"  rx="4.5" fill="#3d3a6e" opacity="0.3"/>
+  <rect x="44" y="421" width="60"  height="9"  rx="4.5" fill="#3d3a6e" opacity="0.25"/>
+
+  <!-- Flowchart nodes (right) -->
+  <!-- Top node -->
+  <rect x="282" y="88"  width="148" height="44" rx="12" fill="#5b52e0" stroke="#7b72f0" stroke-width="1.2"/>
+  <!-- Arrow down -->
+  <line x1="356" y1="132" x2="356" y2="164" stroke="#7b72f0" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Mid node -->
+  <rect x="282" y="165" width="148" height="44" rx="12" fill="#1e1b3a" stroke="#4a44b0" stroke-width="1.2"/>
+  <!-- Split arrows -->
+  <line x1="318" y1="209" x2="296" y2="242" stroke="#7b72f0" stroke-width="1.6" marker-end="url(#arr)" stroke-opacity="0.8"/>
+  <line x1="394" y1="209" x2="416" y2="242" stroke="#7b72f0" stroke-width="1.6" marker-end="url(#arr)" stroke-opacity="0.8"/>
+  <!-- Bot left node -->
+  <rect x="270" y="243" width="72"  height="38" rx="10" fill="#312e70" stroke="#6c63c0" stroke-width="1"/>
+  <!-- Bot right node -->
+  <rect x="370" y="243" width="72"  height="38" rx="10" fill="#312e70" stroke="#6c63c0" stroke-width="1"/>
+  <!-- Merge arrows -->
+  <line x1="306" y1="281" x2="332" y2="308" stroke="#7b72f0" stroke-width="1.4" marker-end="url(#arr)" stroke-opacity="0.7"/>
+  <line x1="406" y1="281" x2="380" y2="308" stroke="#7b72f0" stroke-width="1.4" marker-end="url(#arr)" stroke-opacity="0.7"/>
+  <!-- Merge node -->
+  <rect x="282" y="309" width="148" height="44" rx="12" fill="#5b52e0" stroke="#7b72f0" stroke-width="1.2" opacity="0.88"/>
+  <!-- Arrow down -->
+  <line x1="356" y1="353" x2="356" y2="384" stroke="#7b72f0" stroke-width="1.8" marker-end="url(#arr)" stroke-opacity="0.65"/>
+  <!-- End node -->
+  <rect x="282" y="385" width="148" height="44" rx="12" fill="#1e1b3a" stroke="#4a44b0" stroke-width="1" opacity="0.75"/>
+
+  <!-- Outer border -->
+  <rect x="0" y="0" width="512" height="512" rx="108" fill="none" stroke="#6c63ff" stroke-width="2" stroke-opacity="0.2"/>
+</svg>

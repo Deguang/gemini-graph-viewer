@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Graph (Flowchart) Split-Viewer",
+  "version": "1.0.0",
+  "description": "Professional split-view diagram renderer for Google Gemini. Supports real-time preview, auto-fit, export, and one-click code collapse for Graph and Flowcharts.",
+  "icons": {
+    "16": "icon.svg",
+    "48": "icon.svg",
+    "128": "icon.svg"
+  },
+  "permissions": ["scripting", "tabs", "storage"],
+  "host_permissions": [
+    "*://gemini.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://gemini.google.com/*"],
+      "js": ["lib/mermaid.min.js", "content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["lib/mermaid.min.js"],
+      "matches": ["*://gemini.google.com/*"]
+    }
+  ]
+}
