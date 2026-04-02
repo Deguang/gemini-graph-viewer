@@ -1,6 +1,6 @@
 {
   "name": "gemini-graph-split-viewer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Professional split-view diagram renderer for Google Gemini.",
   "scripts": {
     "zip": "mkdir -p release && zip -r release/gemini-graph-viewer-v$npm_package_version.zip . -x '*.git*' -x '*.DS_Store*' -x 'node_modules/*' -x 'package.json' -x 'package-lock.json' -x 'release.sh' -x 'release/*' -x 'docs/*' -x '.github/*'",

@@ -1,14 +1,14 @@
 {
   "manifest_version": 3,
   "name": "Gemini Graph (Flowchart) Split-Viewer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Professional split-view Mermaid diagram renderer for Google Gemini. Real-time preview, auto-fit, and export.",
   "icons": {
-    "16": "icon.svg",
-    "48": "icon.svg",
-    "128": "icon.svg"
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
   },
-  "permissions": ["scripting", "tabs", "storage"],
+  "permissions": ["scripting", "tabs"],
   "host_permissions": [
     "*://gemini.google.com/*"
   ],
