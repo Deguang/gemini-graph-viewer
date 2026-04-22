@@ -9,6 +9,7 @@
     const theme = getTheme();
     return {
       startOnLoad: false, theme: theme === 'dark' ? 'dark' : 'default', securityLevel: 'loose',
+      suppressErrorRendering: true,
       flowchart: { useMaxWidth: false, htmlLabels: true, curve: 'basis' },
       themeVariables: theme === 'dark' ? {
         primaryColor: '#1e1f20', primaryTextColor: '#e3e3e3', primaryBorderColor: '#8ab4f8',
@@ -28,9 +29,21 @@
 
   function cleanMermaidCode(text) {
     let cleaned = text.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&amp;/g, '&');
-    // 关键修复：仅对未包裹引号的标签添加引号，防止 E["Label (Text)"] 变成 E[""Label (Text)""]
-    cleaned = cleaned.replace(/([a-zA-Z0-9_-]+)\s*\[(?!"|')([^"\]]*[\(\)][^"\]]*)(?!"|')\]/g, '$1["$2"]');
-    cleaned = cleaned.replace(/([a-zA-Z0-9_-]+)\s*\((?!"|')([^"\)\s]*[\(\)][^"\)\s]*)(?!"|')\)/g, '$1("$2")');
+    
+    // 修复 subgraph 标题中包含特殊字符导致解析错误的问题
+    let subGraphCounter = 0;
+    cleaned = cleaned.replace(/(\bsubgraph\s+)([^\n\r\u2028\u2029\{]+)/g, (match, p1, p2) => {
+      let title = p2.trim();
+      if (title.includes('[') || title.includes('"')) {
+        return match; // 已经使用了新语法，跳过
+      }
+      if (/[\(\)\{\}\<\>:]/.test(title)) {
+        subGraphCounter++;
+        return `${p1}subgraph_fix_${subGraphCounter} ["${title}"]`;
+      }
+      return match;
+    });
+
     return cleaned;
   }
 
@@ -240,7 +253,9 @@
           requestAnimationFrame(() => setTimeout(autoFit, 50));
         }
       } catch (err) {
-        renderDiv.replaceChildren(Object.assign(document.createElement('div'), {className:'mermaid-error', textContent:err.message.split('\n')[0]}));
+        const stray = document.getElementById('d' + previewId + '-svg');
+        if (stray) stray.remove();
+        renderDiv.replaceChildren(Object.assign(document.createElement('pre'), {className:'mermaid-error', textContent:err.message || String(err)}));
       }
     };
 
