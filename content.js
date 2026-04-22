@@ -44,6 +44,10 @@
       return match;
     });
 
+    // 修复 edge label 包含特殊字符（如括号等）导致解析错误的问题
+    // 自动将 A -->|label| B 安全包裹为 A -->|"label"| B
+    cleaned = cleaned.replace(/(\-+>|==+>|\.-+>|\-+|\.\-+)\s*\|([^\|"']+)\|/g, '$1|"$2"|');
+
     return cleaned;
   }
 
