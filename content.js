@@ -28,16 +28,17 @@
   initMermaid();
 
   function cleanMermaidCode(text) {
-    let cleaned = text.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+    let cleaned = text.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '#quot;').replace(/&amp;/g, '&');
+    cleaned = cleaned.replace(/"/g, '#quot;');
     
     // 修复 subgraph 标题中包含特殊字符导致解析错误的问题
     let subGraphCounter = 0;
     cleaned = cleaned.replace(/(\bsubgraph\s+)([^\n\r\u2028\u2029\{]+)/g, (match, p1, p2) => {
       let title = p2.trim();
-      if (title.includes('[') || title.includes('"')) {
+      if (title.includes('[')) {
         return match; // 已经使用了新语法，跳过
       }
-      if (/[\(\)\{\}\<\>:]/.test(title)) {
+      if (/[\(\)\{\}\<\>:#]/.test(title)) {
         subGraphCounter++;
         return `${p1}subgraph_fix_${subGraphCounter} ["${title}"]`;
       }
@@ -46,7 +47,7 @@
 
     // 修复 edge label 包含特殊字符（如括号等）导致解析错误的问题
     // 自动将 A -->|label| B 安全包裹为 A -->|"label"| B
-    cleaned = cleaned.replace(/(\-+>|==+>|\.-+>|\-+|\.\-+)\s*\|([^\|"']+)\|/g, '$1|"$2"|');
+    cleaned = cleaned.replace(/(\-+>|==+>|\.-+>|\-+|\.\-+)\s*\|([^\|]+)\|/g, '$1|"$2"|');
 
     return cleaned;
   }
