@@ -188,6 +188,48 @@
     };
     previewSideObj.side.appendChild(exportBtn);
 
+    const copyImgBtn = document.createElement('button');
+    copyImgBtn.className = 'mermaid-copy-img-btn';
+    copyImgBtn.textContent = 'Copy Image';
+    copyImgBtn.onclick = () => {
+      const svg = zoomContainer.querySelector('svg');
+      if (!svg) return;
+      const svgClone = svg.cloneNode(true);
+      const viewBox = svgClone.viewBox.baseVal;
+      const w = viewBox.width || svg.getBoundingClientRect().width || 800;
+      const h = viewBox.height || svg.getBoundingClientRect().height || 600;
+      svgClone.setAttribute('width', w);
+      svgClone.setAttribute('height', h);
+      
+      const style = document.createElement('style');
+      const isDark = document.body.classList.contains('dark-theme');
+      style.textContent = `svg { background: ${isDark ? '#1e1f20' : '#ffffff'}; }`;
+      svgClone.prepend(style);
+      
+      const svgData = new XMLSerializer().serializeToString(svgClone);
+      const canvas = document.createElement('canvas');
+      // 放大倍数提升清晰度
+      const scale = 2;
+      canvas.width = w * scale;
+      canvas.height = h * scale;
+      const ctx = canvas.getContext('2d');
+      ctx.scale(scale, scale);
+      
+      const img = new Image();
+      img.onload = () => {
+        ctx.drawImage(img, 0, 0, w, h);
+        canvas.toBlob((blob) => {
+          if (!blob) return;
+          navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]).then(() => {
+            const old = copyImgBtn.textContent; copyImgBtn.textContent = 'Copied!';
+            setTimeout(() => copyImgBtn.textContent = old, 2000);
+          }).catch(err => console.error('Copy failed:', err));
+        }, 'image/png', 1.0);
+      };
+      img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgData);
+    };
+    previewSideObj.side.appendChild(copyImgBtn);
+
     const codePre = document.createElement('pre');
     codeSideObj.content.appendChild(codePre);
 

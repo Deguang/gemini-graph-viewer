@@ -126,13 +126,14 @@ body.dark-theme .mermaid-side-content pre { color: #e3e3e3; }
 }
 
 /* 功能按钮 */
-.mermaid-export-btn, .mermaid-copy-btn {
+.mermaid-export-btn, .mermaid-copy-img-btn, .mermaid-copy-btn {
   position: absolute; bottom: 15px; right: 15px;
   background: #1a73e8; color: white; border: none; border-radius: 8px;
   padding: 6px 14px; font-size: 11px; font-weight: 500; cursor: pointer;
   z-index: 10; box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2);
 }
-body.dark-theme .mermaid-export-btn { background: #8ab4f8; color: #131314; }
+.mermaid-copy-img-btn { right: 105px; } /* 在 Export SVG 左侧 */
+body.dark-theme .mermaid-export-btn, body.dark-theme .mermaid-copy-img-btn { background: #8ab4f8; color: #131314; }
 
 .mermaid-copy-btn {
   background: rgba(0,0,0,0.05); color: #666; border: 1px solid rgba(0,0,0,0.1);
