@@ -172,6 +172,17 @@ body.gemini-polish-typography .response-content {
 }
 
 /* Force Font Properties on all text nodes inside messages, excluding icons */
+body.gemini-polish-typography message-content *,
+body.gemini-polish-typography .message-content *,
+body.gemini-polish-typography .response-content *,
+body.gemini-polish-typography model-response *,
+body.gemini-polish-typography user-query *,
+body.gemini-polish-typography [data-test-id="message-content"] *,
+body.gemini-polish-typography .markdown * {
+  /* Only apply to text elements, exclude SVG, IMG, Code, and Icons */
+}
+
+/* Explicitly target text tags to avoid collateral damage but ensure full coverage */
 body.gemini-polish-typography message-content p,
 body.gemini-polish-typography .message-content p,
 body.gemini-polish-typography message-content li,
@@ -180,8 +191,24 @@ body.gemini-polish-typography message-content span:not(.material-symbols-outline
 body.gemini-polish-typography .message-content span:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
 body.gemini-polish-typography message-content a,
 body.gemini-polish-typography .message-content a,
-body.gemini-polish-typography message-content div,
-body.gemini-polish-typography .message-content div {
+body.gemini-polish-typography message-content div:not([class*="code"]):not(.mermaid-wrapper),
+body.gemini-polish-typography .message-content div:not([class*="code"]):not(.mermaid-wrapper),
+body.gemini-polish-typography model-response p,
+body.gemini-polish-typography model-response li,
+body.gemini-polish-typography model-response span:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
+body.gemini-polish-typography user-query p,
+body.gemini-polish-typography user-query span:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
+body.gemini-polish-typography .markdown p,
+body.gemini-polish-typography .markdown li,
+body.gemini-polish-typography .markdown span:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
+body.gemini-polish-typography h1,
+body.gemini-polish-typography h2,
+body.gemini-polish-typography h3,
+body.gemini-polish-typography h4,
+body.gemini-polish-typography h5,
+body.gemini-polish-typography h6,
+body.gemini-polish-typography td,
+body.gemini-polish-typography th {
   font-family: var(--polish-font-family) !important;
   font-size: var(--polish-font-size, 16px) !important;
   line-height: var(--polish-line-height, 1.7) !important;
@@ -189,15 +216,19 @@ body.gemini-polish-typography .message-content div {
 
 body.gemini-polish-typography message-content p,
 body.gemini-polish-typography .message-content p,
-body.gemini-polish-typography .response-content p {
+body.gemini-polish-typography .response-content p,
+body.gemini-polish-typography model-response p,
+body.gemini-polish-typography user-query p,
+body.gemini-polish-typography .markdown p {
   margin-bottom: var(--polish-paragraph-spacing, 1.2em) !important;
 }
 
 body.gemini-polish-typography message-content li,
 body.gemini-polish-typography .message-content li,
-body.gemini-polish-typography .response-content li {
+body.gemini-polish-typography .response-content li,
+body.gemini-polish-typography model-response li,
+body.gemini-polish-typography .markdown li {
   margin-bottom: 0.5em !important;
-  line-height: var(--polish-line-height, 1.7) !important;
 }
 
 /* Control Max Width directly on the chat message blocks to avoid breaking layout */
@@ -216,28 +247,49 @@ body.gemini-polish-typography .message-wrapper {
 /* Gemini Polish: Minimal Mode                               */
 /* ========================================================= */
 
-/* Hide Disclaimer Footer */
-body.gemini-polish-minimal [data-test-id="bottom-disclaimer"] {
+/* Hide Disclaimer Footer (covers old and new Angular components) */
+body.gemini-polish-minimal [data-test-id="bottom-disclaimer"],
+body.gemini-polish-minimal .disclaimer-container,
+body.gemini-polish-minimal .footer-text,
+body.gemini-polish-minimal div[class*="disclaimer"],
+body.gemini-polish-minimal span[class*="disclaimer"],
+body.gemini-polish-minimal .bottom-notice {
   display: none !important;
 }
 
 /* Fade out response action buttons (thumbs up, share, etc.) unless hovered */
+body.gemini-polish-minimal message-actions,
+body.gemini-polish-minimal response-actions,
 body.gemini-polish-minimal .response-actions,
-body.gemini-polish-minimal .message-actions {
-  opacity: 0.15;
-  transition: opacity 0.3s ease;
+body.gemini-polish-minimal .message-actions,
+body.gemini-polish-minimal .bottom-actions,
+body.gemini-polish-minimal [class*="action-row"],
+body.gemini-polish-minimal [data-test-id="message-actions"],
+body.gemini-polish-minimal user-query-actions,
+body.gemini-polish-minimal model-response-actions {
+  opacity: 0.15 !important;
+  transition: opacity 0.3s ease !important;
 }
 
+body.gemini-polish-minimal message-actions:hover,
+body.gemini-polish-minimal response-actions:hover,
 body.gemini-polish-minimal .response-actions:hover,
 body.gemini-polish-minimal .message-actions:hover,
+body.gemini-polish-minimal [class*="action-row"]:hover,
+body.gemini-polish-minimal [data-test-id="message-actions"]:hover,
+body.gemini-polish-minimal user-query-actions:hover,
+body.gemini-polish-minimal model-response-actions:hover,
+body.gemini-polish-minimal .message-wrapper:hover message-actions,
 body.gemini-polish-minimal .message-wrapper:hover .response-actions,
-body.gemini-polish-minimal .message-wrapper:hover .message-actions {
+body.gemini-polish-minimal .message-wrapper:hover .message-actions,
+body.gemini-polish-minimal .conversation-item:hover .response-actions {
   opacity: 1 !important;
 }
 
 /* Polish Side Navigation */
 body.gemini-polish-minimal side-navigation-content .item-label,
-body.gemini-polish-minimal side-navigation-content .title {
+body.gemini-polish-minimal side-navigation-content .title,
+body.gemini-polish-minimal [class*="history-item"] {
   font-size: 13px !important;
   font-family: system-ui, -apple-system, sans-serif !important;
   font-weight: 500 !important;
@@ -247,15 +299,31 @@ body.gemini-polish-minimal side-navigation-content .title {
 /* Gemini Polish: Theme & Accent Color                       */
 /* ========================================================= */
 
-/* Buttons and Links */
+/* Override Gemini's global CSS variables for the new Luminous Design System */
+body.gemini-polish-theme {
+  --gem-sys-color--primary: var(--polish-accent-color) !important;
+  --gem-sys-color--primary-container: var(--polish-accent-bg) !important;
+  --lumi-sys-color--primary: var(--polish-accent-color) !important;
+  --lumi-sys-color--primary-container: var(--polish-accent-bg) !important;
+  --mat-sys-primary: var(--polish-accent-color) !important;
+  --mat-sys-primary-container: var(--polish-accent-bg) !important;
+  --mdc-theme-primary: var(--polish-accent-color) !important;
+}
+
+/* Buttons and Links Fallbacks */
 body.gemini-polish-theme button.mdc-button--filled,
 body.gemini-polish-theme .mat-mdc-button.mdc-button--filled,
-body.gemini-polish-theme .mdc-fab {
+body.gemini-polish-theme .mdc-fab,
+body.gemini-polish-theme [class*="primary-button"] {
   background-color: var(--polish-accent-color) !important;
 }
 
-/* User Bubble Background (if they have bubbles) or User Text */
-body.gemini-polish-theme .user-query .message-content {
+/* User Bubble Background (covers new Angular structure) */
+body.gemini-polish-theme .user-query .message-content,
+body.gemini-polish-theme user-query .message-content,
+body.gemini-polish-theme [data-test-id="user-query"] .message-content,
+body.gemini-polish-theme .user-message-bubble,
+body.gemini-polish-theme user-message {
   background-color: var(--polish-accent-bg) !important;
   border-radius: 12px;
   padding: 12px 16px;
