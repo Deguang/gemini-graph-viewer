@@ -260,41 +260,24 @@ body.gemini-polish-typography .markdown blockquote {
   opacity: 0.85;
 }
 
-/* Polish Side Navigation Typography (Scoped to side-navigation-content and history items) */
-body.gemini-polish-typography side-navigation-content *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
-body.gemini-polish-typography .navigation-drawer-content *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
-body.gemini-polish-typography conversation-list *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
-body.gemini-polish-typography chat-history *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
-body.gemini-polish-typography recent-chats *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]) {
-  font-family: var(--polish-font-family) !important;
-}
+/* ========================================================= */
+/* Gemini Polish: Side Navigation & History                  */
+/* ========================================================= */
 
 /* Force Nav Font Size */
-body.gemini-polish-typography side-navigation-content .item-label,
-body.gemini-polish-typography side-navigation-content .title,
-body.gemini-polish-typography .navigation-drawer-content .title,
-body.gemini-polish-typography [class*="history-item"],
-body.gemini-polish-typography .history-item,
-body.gemini-polish-typography conversation-list div,
-body.gemini-polish-typography conversation-list span,
-body.gemini-polish-typography conversation-list a,
-body.gemini-polish-typography recent-chats span {
+body.gemini-polish-typography :is(nav, aside, mat-sidenav, .mdc-drawer, [role="navigation"], [data-test-id*="sidenav"], [class*="drawer"], [class*="sidebar"]) :is(a, button, [role="button"], [class*="item"], .title) *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]) {
+  font-family: var(--polish-font-family) !important;
   font-size: var(--polish-nav-font-size, 13px) !important;
   font-weight: 500 !important;
 }
 
 /* Control spacing (padding) of history items to adjust density */
-body.gemini-polish-typography side-navigation-content [class*="history-item"],
-body.gemini-polish-typography side-navigation-content a.navigation-item,
-body.gemini-polish-typography side-navigation-content .navigation-item,
-body.gemini-polish-typography conversation-list a,
-body.gemini-polish-typography recent-chats a,
-body.gemini-polish-typography .recent-chat-item,
-body.gemini-polish-typography [data-test-id*="history-item"] {
+body.gemini-polish-typography :is(nav, aside, mat-sidenav, .mdc-drawer, [role="navigation"], [data-test-id*="sidenav"], [class*="drawer"], [class*="sidebar"]) :is(a, [class*="item"], .mdc-list-item) {
   padding-top: var(--polish-nav-spacing, 8px) !important;
   padding-bottom: var(--polish-nav-spacing, 8px) !important;
-  min-height: auto !important; /* Override Gemini's hardcoded height to allow spacing adjustments */
+  min-height: auto !important; /* Override Gemini's hardcoded height */
   height: auto !important;
+  line-height: 1.4 !important;
 }
 
 /* Control Max Width directly on the chat message blocks to avoid breaking layout */
@@ -392,26 +375,12 @@ body.gemini-polish-theme .user-query-bubble-with-background {
 }
 
 /* Side Navigation Active/Highlighted Item */
-body.gemini-polish-theme side-navigation-content [aria-selected="true"],
-body.gemini-polish-theme side-navigation-content [aria-current="page"],
-body.gemini-polish-theme side-navigation-content .selected,
-body.gemini-polish-theme side-navigation-content .active,
-body.gemini-polish-theme conversation-list [aria-selected="true"],
-body.gemini-polish-theme conversation-list [aria-current="page"],
-body.gemini-polish-theme conversation-list .selected,
-body.gemini-polish-theme conversation-list .active,
-body.gemini-polish-theme recent-chats [aria-selected="true"],
-body.gemini-polish-theme recent-chats .selected,
-body.gemini-polish-theme [data-test-id*="history-item"][aria-selected="true"] {
+body.gemini-polish-theme :is(nav, aside, mat-sidenav, .mdc-drawer, [role="navigation"], [data-test-id*="sidenav"], [class*="drawer"], [class*="sidebar"]) :is([aria-selected="true"], [aria-current="page"], .selected, .active, .is-active, .mdc-list-item--activated, [data-is-active="true"]) {
   background-color: var(--polish-accent-bg) !important;
-  color: var(--polish-accent-color) !important;
-  font-weight: 600 !important;
-  border-radius: 8px; /* Or whatever Gemini's default is, usually a pill shape, but let's just color it */
+  border-radius: 8px !important;
 }
 
-/* Ensure text inside active nav item also gets colored */
-body.gemini-polish-theme side-navigation-content [aria-selected="true"] *,
-body.gemini-polish-theme conversation-list [aria-selected="true"] *,
-body.gemini-polish-theme recent-chats [aria-selected="true"] * {
+body.gemini-polish-theme :is(nav, aside, mat-sidenav, .mdc-drawer, [role="navigation"], [data-test-id*="sidenav"], [class*="drawer"], [class*="sidebar"]) :is([aria-selected="true"], [aria-current="page"], .selected, .active, .is-active, .mdc-list-item--activated, [data-is-active="true"]) *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]) {
   color: var(--polish-accent-color) !important;
+  font-weight: 600 !important;
 }
