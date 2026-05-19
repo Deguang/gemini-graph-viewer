@@ -159,7 +159,7 @@ body.gemini-polish-typography .response-content {
   letter-spacing: 0.02em;
 }
 
-/* Force Font Size on all text nodes inside messages, excluding icons */
+/* Force Font Properties on all text nodes inside messages, excluding icons */
 body.gemini-polish-typography message-content p,
 body.gemini-polish-typography .message-content p,
 body.gemini-polish-typography message-content li,
@@ -170,7 +170,9 @@ body.gemini-polish-typography message-content a,
 body.gemini-polish-typography .message-content a,
 body.gemini-polish-typography message-content div,
 body.gemini-polish-typography .message-content div {
+  font-family: var(--polish-font-family) !important;
   font-size: var(--polish-font-size, 16px) !important;
+  line-height: var(--polish-line-height, 1.7) !important;
 }
 
 body.gemini-polish-typography message-content p,
