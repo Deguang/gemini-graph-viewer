@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const fontSizeVal = document.getElementById('fontSizeVal');
   const maxWidth = document.getElementById('maxWidth');
   const maxWidthVal = document.getElementById('maxWidthVal');
+  const customCSS = document.getElementById('customCSS');
 
   // Load saved config
   chrome.storage.sync.get({
@@ -19,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     enableTypography: false,
     lineHeight: 1.7,
     fontSize: 16,
-    maxWidth: 850
+    maxWidth: 850,
+    customCSS: ''
   }, (items) => {
     enableGraph.checked = items.enableGraph;
     enableMinimal.checked = items.enableMinimal;
@@ -33,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     maxWidth.value = items.maxWidth;
     maxWidthVal.textContent = items.maxWidth;
+
+    customCSS.value = items.customCSS;
 
     updateTypographyState();
   });
@@ -53,7 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
       enableTypography: enableTypography.checked,
       lineHeight: lineHeight.value,
       fontSize: fontSize.value,
-      maxWidth: maxWidth.value
+      maxWidth: maxWidth.value,
+      customCSS: customCSS.value
     };
     chrome.storage.sync.set(config, () => {
       // Notify content script
@@ -85,6 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   maxWidth.addEventListener('input', (e) => {
     maxWidthVal.textContent = e.target.value;
+    saveConfig();
+  });
+
+  customCSS.addEventListener('input', () => {
     saveConfig();
   });
 });

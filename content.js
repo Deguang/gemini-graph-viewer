@@ -316,7 +316,8 @@
     enableTypography: false,
     lineHeight: 1.7,
     fontSize: 16,
-    maxWidth: 850
+    maxWidth: 850,
+    customCSS: ''
   };
 
   function applyConfigToDOM() {
@@ -336,6 +337,15 @@
       document.documentElement.style.removeProperty('--polish-font-size');
       document.documentElement.style.removeProperty('--polish-max-width');
     }
+
+    // Apply Custom CSS
+    let customStyleEl = document.getElementById('gemini-polish-custom-css');
+    if (!customStyleEl) {
+      customStyleEl = document.createElement('style');
+      customStyleEl.id = 'gemini-polish-custom-css';
+      document.head.appendChild(customStyleEl);
+    }
+    customStyleEl.textContent = currentConfig.customCSS || '';
   }
 
   // Load config on startup
