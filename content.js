@@ -315,6 +315,7 @@
     enableMinimal: false,
     enableTypography: false,
     fontFamily: 'system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif',
+    customFontName: '',
     lineHeight: 1.7,
     paragraphSpacing: 1.2,
     fontSize: 16,
@@ -331,7 +332,13 @@
     
     if (currentConfig.enableTypography) {
       body.classList.add('gemini-polish-typography');
-      document.documentElement.style.setProperty('--polish-font-family', currentConfig.fontFamily || 'system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif');
+      
+      let resolvedFont = currentConfig.fontFamily || 'system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif';
+      if (resolvedFont === 'custom' && currentConfig.customFontName) {
+        resolvedFont = currentConfig.customFontName;
+      }
+      document.documentElement.style.setProperty('--polish-font-family', resolvedFont);
+      
       document.documentElement.style.setProperty('--polish-line-height', currentConfig.lineHeight);
       document.documentElement.style.setProperty('--polish-paragraph-spacing', `${currentConfig.paragraphSpacing}em`);
       document.documentElement.style.setProperty('--polish-font-size', `${currentConfig.fontSize}px`);

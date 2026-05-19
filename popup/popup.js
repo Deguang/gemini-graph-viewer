@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const typographyControls = document.getElementById('typography-controls');
   
   const fontFamily = document.getElementById('fontFamily');
+  const customFontName = document.getElementById('customFontName');
   const lineHeight = document.getElementById('lineHeight');
   const lineHeightVal = document.getElementById('lineHeightVal');
   const paragraphSpacing = document.getElementById('paragraphSpacing');
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     enableMinimal: false,
     enableTypography: false,
     fontFamily: 'system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif',
+    customFontName: '',
     lineHeight: 1.7,
     paragraphSpacing: 1.2,
     fontSize: 16,
@@ -35,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     enableTypography.checked = items.enableTypography;
     
     fontFamily.value = items.fontFamily;
+    customFontName.value = items.customFontName;
     
     lineHeight.value = items.lineHeight;
     lineHeightVal.textContent = items.lineHeight;
@@ -53,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     customCSS.value = items.customCSS;
 
     updateTypographyState();
+    updateFontFamilyState();
   });
 
   function updateTypographyState() {
@@ -63,6 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function updateFontFamilyState() {
+    if (fontFamily.value === 'custom') {
+      customFontName.style.display = 'block';
+    } else {
+      customFontName.style.display = 'none';
+    }
+  }
+
   // Save Config
   function saveConfig() {
     const config = {
@@ -70,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       enableMinimal: enableMinimal.checked,
       enableTypography: enableTypography.checked,
       fontFamily: fontFamily.value,
+      customFontName: customFontName.value,
       lineHeight: lineHeight.value,
       paragraphSpacing: paragraphSpacing.value,
       fontSize: fontSize.value,
@@ -88,11 +101,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Event Listeners
-  [enableGraph, enableMinimal, enableTypography, fontFamily].forEach(el => {
+  [enableGraph, enableMinimal, enableTypography].forEach(el => {
     el.addEventListener('change', () => {
       updateTypographyState();
       saveConfig();
     });
+  });
+
+  fontFamily.addEventListener('change', () => {
+    updateFontFamilyState();
+    saveConfig();
+  });
+
+  customFontName.addEventListener('input', () => {
+    saveConfig();
   });
 
   lineHeight.addEventListener('input', (e) => {

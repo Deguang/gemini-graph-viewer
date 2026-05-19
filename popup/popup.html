@@ -54,10 +54,16 @@
         <label style="margin-bottom: 4px;">Font Family</label>
         <select id="fontFamily" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; margin-bottom: 8px;">
           <option value="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">System Default (Sans-serif)</option>
+          <option value="'PingFang SC', 'San Francisco', sans-serif">Apple PingFang (苹方)</option>
+          <option value="'Microsoft YaHei', 'SimHei', sans-serif">Microsoft YaHei (微软雅黑)</option>
+          <option value="'HarmonyOS Sans SC', 'HarmonyOS Sans', sans-serif">HarmonyOS Sans (鸿蒙)</option>
+          <option value="'Inter', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif">Modern Sans (Inter/Roboto)</option>
           <option value="'Noto Serif SC', 'Songti SC', 'STSong', serif">Serif (宋体/衬线)</option>
-          <option value="'LXGW WenKai', 'Kaiti SC', 'STKaiti', serif">Kai (楷体/手写)</option>
-          <option value="'JetBrains Mono', 'Roboto Mono', monospace">Monospace (等宽)</option>
+          <option value="'LXGW WenKai', 'Kaiti SC', 'STKaiti', serif">Kai (霞鹜文楷/楷体)</option>
+          <option value="'JetBrains Mono', 'Fira Code', 'Consolas', monospace">Developer (JetBrains/Fira)</option>
+          <option value="custom">-- Custom Font --</option>
         </select>
+        <input type="text" id="customFontName" placeholder="e.g., 'Alibaba PuHuiTi'" style="display: none; width: 100%; box-sizing: border-box; padding: 4px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; margin-bottom: 8px;">
       </div>
       <div class="control-group">
         <label>Line Height: <span id="lineHeightVal">1.7</span></label>
