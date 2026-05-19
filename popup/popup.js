@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const fontSizeVal = document.getElementById('fontSizeVal');
   const maxWidth = document.getElementById('maxWidth');
   const maxWidthVal = document.getElementById('maxWidthVal');
+  const navFontSize = document.getElementById('navFontSize');
+  const navFontSizeVal = document.getElementById('navFontSizeVal');
+  const navSpacing = document.getElementById('navSpacing');
+  const navSpacingVal = document.getElementById('navSpacingVal');
   const accentColor = document.getElementById('accentColor');
   const customCSS = document.getElementById('customCSS');
 
@@ -29,6 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     paragraphSpacing: 1.2,
     fontSize: 16,
     maxWidth: 850,
+    navFontSize: 13,
+    navSpacing: 8,
     accentColor: '#1a73e8',
     customCSS: ''
   }, (items) => {
@@ -50,6 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     maxWidth.value = items.maxWidth;
     maxWidthVal.textContent = items.maxWidth;
+
+    navFontSize.value = items.navFontSize;
+    navFontSizeVal.textContent = items.navFontSize;
+
+    navSpacing.value = items.navSpacing;
+    navSpacingVal.textContent = items.navSpacing;
 
     accentColor.value = items.accentColor;
 
@@ -87,6 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
       paragraphSpacing: paragraphSpacing.value,
       fontSize: fontSize.value,
       maxWidth: maxWidth.value,
+      navFontSize: navFontSize.value,
+      navSpacing: navSpacing.value,
       accentColor: accentColor.value,
       customCSS: customCSS.value
     };
@@ -134,6 +148,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   maxWidth.addEventListener('input', (e) => {
     maxWidthVal.textContent = e.target.value;
+    saveConfig();
+  });
+
+  navFontSize.addEventListener('input', (e) => {
+    navFontSizeVal.textContent = e.target.value;
+    saveConfig();
+  });
+
+  navSpacing.addEventListener('input', (e) => {
+    navSpacingVal.textContent = e.target.value;
     saveConfig();
   });
 

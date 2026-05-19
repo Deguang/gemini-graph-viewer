@@ -326,6 +326,8 @@
     paragraphSpacing: 1.2,
     fontSize: 16,
     maxWidth: 850,
+    navFontSize: 13,
+    navSpacing: 8,
     accentColor: '#1a73e8',
     customCSS: ''
   };
@@ -349,6 +351,8 @@
       document.documentElement.style.setProperty('--polish-paragraph-spacing', `${currentConfig.paragraphSpacing}em`);
       document.documentElement.style.setProperty('--polish-font-size', `${currentConfig.fontSize}px`);
       document.documentElement.style.setProperty('--polish-max-width', `${currentConfig.maxWidth}px`);
+      document.documentElement.style.setProperty('--polish-nav-font-size', `${currentConfig.navFontSize}px`);
+      document.documentElement.style.setProperty('--polish-nav-spacing', `${currentConfig.navSpacing}px`);
     } else {
       body.classList.remove('gemini-polish-typography');
       document.documentElement.style.removeProperty('--polish-font-family');
@@ -356,6 +360,8 @@
       document.documentElement.style.removeProperty('--polish-paragraph-spacing');
       document.documentElement.style.removeProperty('--polish-font-size');
       document.documentElement.style.removeProperty('--polish-max-width');
+      document.documentElement.style.removeProperty('--polish-nav-font-size');
+      document.documentElement.style.removeProperty('--polish-nav-spacing');
     }
 
     body.classList.add('gemini-polish-theme');

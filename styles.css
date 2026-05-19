@@ -201,6 +201,29 @@ body.gemini-polish-typography .markdown li {
   margin-bottom: 0.5em !important;
 }
 
+/* Polish Side Navigation Typography (Scoped to side-navigation-content and history items) */
+body.gemini-polish-typography side-navigation-content *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
+body.gemini-polish-typography .navigation-drawer-content *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]) {
+  font-family: var(--polish-font-family) !important;
+}
+
+body.gemini-polish-typography side-navigation-content .item-label,
+body.gemini-polish-typography side-navigation-content .title,
+body.gemini-polish-typography [class*="history-item"],
+body.gemini-polish-typography .history-item {
+  font-size: var(--polish-nav-font-size, 13px) !important;
+  font-weight: 500 !important;
+}
+
+/* Control spacing (padding) of history items to adjust density */
+body.gemini-polish-typography side-navigation-content [class*="history-item"],
+body.gemini-polish-typography side-navigation-content a.navigation-item,
+body.gemini-polish-typography side-navigation-content .navigation-item {
+  padding-top: var(--polish-nav-spacing, 8px) !important;
+  padding-bottom: var(--polish-nav-spacing, 8px) !important;
+  min-height: auto !important; /* Override Gemini's hardcoded height to allow spacing adjustments */
+}
+
 /* Control Max Width directly on the chat message blocks to avoid breaking layout */
 body.gemini-polish-typography user-query,
 body.gemini-polish-typography model-response,
@@ -257,16 +280,6 @@ body.gemini-polish-minimal .message-wrapper:hover .message-actions,
 body.gemini-polish-minimal .conversation-item:hover .response-actions,
 body.gemini-polish-minimal model-response:hover model-response-actions {
   opacity: 1 !important;
-}
-
-/* Polish Side Navigation */
-body.gemini-polish-minimal side-navigation-content .item-label,
-body.gemini-polish-minimal side-navigation-content .title,
-body.gemini-polish-minimal [class*="history-item"],
-body.gemini-polish-minimal .navigation-drawer-content * {
-  font-size: 13px !important;
-  font-family: system-ui, -apple-system, sans-serif !important;
-  font-weight: 500 !important;
 }
 
 /* ========================================================= */
