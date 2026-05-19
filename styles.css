@@ -176,7 +176,8 @@ body.gemini-polish-typography .markdown,
 body.gemini-polish-typography .message-content,
 body.gemini-polish-typography message-content,
 body.gemini-polish-typography user-query,
-body.gemini-polish-typography .user-message-text {
+body.gemini-polish-typography .user-message-text,
+body.gemini-polish-typography .user-query-bubble-with-background {
   font-family: var(--polish-font-family) !important;
 }
 
@@ -185,7 +186,9 @@ body.gemini-polish-typography .markdown li,
 body.gemini-polish-typography .markdown td,
 body.gemini-polish-typography .markdown th,
 body.gemini-polish-typography user-query .text,
-body.gemini-polish-typography .user-message-text {
+body.gemini-polish-typography .user-message-text,
+body.gemini-polish-typography .user-query-bubble-with-background p,
+body.gemini-polish-typography .user-query-bubble-with-background .query-text-line {
   font-family: var(--polish-font-family) !important;
   font-size: var(--polish-font-size, 16px) !important;
   line-height: var(--polish-line-height, 1.7) !important;
@@ -331,7 +334,8 @@ body.gemini-polish-theme .user-query .message-content,
 body.gemini-polish-theme user-query .message-content,
 body.gemini-polish-theme [data-test-id="user-query"] .message-content,
 body.gemini-polish-theme .user-message-bubble,
-body.gemini-polish-theme user-message {
+body.gemini-polish-theme user-message,
+body.gemini-polish-theme .user-query-bubble-with-background {
   background-color: var(--polish-accent-bg) !important;
   border-radius: 12px;
   padding: 12px 16px;
