@@ -146,3 +146,63 @@ body.dark-theme .mermaid-error { color: #f28b82; }
 
 .mermaid-controlled-pre { display: none !important; }
 .mermaid-hidden-native { display: none !important; }
+
+/* ========================================================= */
+/* Gemini Polish: Typography & Layout                        */
+/* ========================================================= */
+
+body.gemini-polish-typography message-content,
+body.gemini-polish-typography .message-content,
+body.gemini-polish-typography .response-content {
+  font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif !important;
+  font-size: var(--polish-font-size, 16px) !important;
+  line-height: var(--polish-line-height, 1.7) !important;
+  letter-spacing: 0.02em;
+}
+
+body.gemini-polish-typography message-content p,
+body.gemini-polish-typography .message-content p,
+body.gemini-polish-typography .response-content p {
+  margin-bottom: 1.2em !important;
+}
+
+body.gemini-polish-typography message-content li,
+body.gemini-polish-typography .message-content li,
+body.gemini-polish-typography .response-content li {
+  margin-bottom: 0.5em !important;
+  line-height: var(--polish-line-height, 1.7) !important;
+}
+
+/* Control Max Width */
+body.gemini-polish-typography .conversation-container,
+body.gemini-polish-typography .chat-history,
+body.gemini-polish-typography main {
+  max-width: var(--polish-max-width, 850px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ========================================================= */
+/* Gemini Polish: Minimal Mode                               */
+/* ========================================================= */
+
+/* Hide Disclaimer Footer */
+body.gemini-polish-minimal .disclaimer-container,
+body.gemini-polish-minimal .footer-text,
+body.gemini-polish-minimal [data-test-id="bottom-disclaimer"] {
+  display: none !important;
+}
+
+/* Fade out response action buttons (thumbs up, share, etc.) unless hovered */
+body.gemini-polish-minimal .response-actions,
+body.gemini-polish-minimal .message-actions {
+  opacity: 0.15;
+  transition: opacity 0.3s ease;
+}
+
+body.gemini-polish-minimal .response-actions:hover,
+body.gemini-polish-minimal .message-actions:hover,
+body.gemini-polish-minimal .message-wrapper:hover .response-actions,
+body.gemini-polish-minimal .message-wrapper:hover .message-actions {
+  opacity: 1 !important;
+}

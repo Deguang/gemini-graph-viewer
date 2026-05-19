@@ -310,7 +310,51 @@
     new MutationObserver(() => render(codeEl.innerText)).observe(codeEl, { characterData: true, childList: true, subtree: true });
   }
 
+  let currentConfig = {
+    enableGraph: true,
+    enableMinimal: false,
+    enableTypography: false,
+    lineHeight: 1.7,
+    fontSize: 16,
+    maxWidth: 850
+  };
+
+  function applyConfigToDOM() {
+    const body = document.body;
+    
+    if (currentConfig.enableMinimal) body.classList.add('gemini-polish-minimal');
+    else body.classList.remove('gemini-polish-minimal');
+    
+    if (currentConfig.enableTypography) {
+      body.classList.add('gemini-polish-typography');
+      document.documentElement.style.setProperty('--polish-line-height', currentConfig.lineHeight);
+      document.documentElement.style.setProperty('--polish-font-size', `${currentConfig.fontSize}px`);
+      document.documentElement.style.setProperty('--polish-max-width', `${currentConfig.maxWidth}px`);
+    } else {
+      body.classList.remove('gemini-polish-typography');
+      document.documentElement.style.removeProperty('--polish-line-height');
+      document.documentElement.style.removeProperty('--polish-font-size');
+      document.documentElement.style.removeProperty('--polish-max-width');
+    }
+  }
+
+  // Load config on startup
+  if (chrome && chrome.storage && chrome.storage.sync) {
+    chrome.storage.sync.get(currentConfig, (items) => {
+      currentConfig = items;
+      applyConfigToDOM();
+    });
+
+    chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+      if (request.action === "updateConfig") {
+        currentConfig = request.config;
+        applyConfigToDOM();
+      }
+    });
+  }
+
   setInterval(() => {
+    if (!currentConfig.enableGraph) return;
     document.querySelectorAll('code[data-test-id="code-content"]').forEach(processCodeBlock);
     document.querySelectorAll('pre code').forEach(processCodeBlock);
   }, 1000);

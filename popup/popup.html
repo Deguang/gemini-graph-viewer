@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gemini Polish Settings</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <img src="../icon.png" alt="Logo" class="logo">
+    <div class="title">Gemini Polish</div>
+    <div class="version">v1.1.0</div>
+  </div>
+
+  <div class="container">
+    <div class="section-title">Core Features</div>
+    <div class="setting-item">
+      <div class="setting-info">
+        <div class="setting-name">Mermaid Graph Viewer</div>
+        <div class="setting-desc">Split-view rendering & auto-fit</div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="enableGraph" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="section-title">UI & Typography (Beta)</div>
+    
+    <div class="setting-item">
+      <div class="setting-info">
+        <div class="setting-name">Minimal Mode</div>
+        <div class="setting-desc">Fade actions, hide disclaimers</div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="enableMinimal">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="setting-item">
+      <div class="setting-info">
+        <div class="setting-name">Custom Typography</div>
+        <div class="setting-desc">Enhance reading experience</div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="enableTypography">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div id="typography-controls" class="sub-controls disabled">
+      <div class="control-group">
+        <label>Line Height: <span id="lineHeightVal">1.7</span></label>
+        <input type="range" id="lineHeight" min="1.4" max="2.2" step="0.1" value="1.7">
+      </div>
+      <div class="control-group">
+        <label>Base Font Size (px): <span id="fontSizeVal">16</span></label>
+        <input type="range" id="fontSize" min="14" max="20" step="1" value="16">
+      </div>
+      <div class="control-group">
+        <label>Content Max Width (px): <span id="maxWidthVal">850</span></label>
+        <input type="range" id="maxWidth" min="600" max="1200" step="50" value="850">
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

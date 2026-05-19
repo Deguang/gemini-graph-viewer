@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><body>
+<div class="mermaid" id="m">
+graph TD
+    F[更新状态为"已支付"]
+</div>
+<script src="lib/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({startOnLoad:false});
+    mermaid.parse(document.getElementById('m').textContent).then(r => console.log('SUCCESS')).catch(e => console.error(e));
+</script>
+</body></html>
