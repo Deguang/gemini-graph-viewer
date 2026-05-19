@@ -317,6 +317,7 @@
     lineHeight: 1.7,
     fontSize: 16,
     maxWidth: 850,
+    accentColor: '#1a73e8',
     customCSS: ''
   };
 
@@ -336,6 +337,17 @@
       document.documentElement.style.removeProperty('--polish-line-height');
       document.documentElement.style.removeProperty('--polish-font-size');
       document.documentElement.style.removeProperty('--polish-max-width');
+    }
+
+    if (currentConfig.accentColor !== '#1a73e8') {
+      body.classList.add('gemini-polish-theme');
+      document.documentElement.style.setProperty('--polish-accent-color', currentConfig.accentColor);
+      // Generate a subtle background version for the accent color
+      document.documentElement.style.setProperty('--polish-accent-bg', currentConfig.accentColor + '15'); // 15 is hex for ~8% opacity
+    } else {
+      body.classList.remove('gemini-polish-theme');
+      document.documentElement.style.removeProperty('--polish-accent-color');
+      document.documentElement.style.removeProperty('--polish-accent-bg');
     }
 
     // Apply Custom CSS

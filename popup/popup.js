@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const fontSizeVal = document.getElementById('fontSizeVal');
   const maxWidth = document.getElementById('maxWidth');
   const maxWidthVal = document.getElementById('maxWidthVal');
+  const accentColor = document.getElementById('accentColor');
   const customCSS = document.getElementById('customCSS');
 
   // Load saved config
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lineHeight: 1.7,
     fontSize: 16,
     maxWidth: 850,
+    accentColor: '#1a73e8',
     customCSS: ''
   }, (items) => {
     enableGraph.checked = items.enableGraph;
@@ -35,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     maxWidth.value = items.maxWidth;
     maxWidthVal.textContent = items.maxWidth;
+
+    accentColor.value = items.accentColor;
 
     customCSS.value = items.customCSS;
 
@@ -58,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lineHeight: lineHeight.value,
       fontSize: fontSize.value,
       maxWidth: maxWidth.value,
+      accentColor: accentColor.value,
       customCSS: customCSS.value
     };
     chrome.storage.sync.set(config, () => {
@@ -90,6 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   maxWidth.addEventListener('input', (e) => {
     maxWidthVal.textContent = e.target.value;
+    saveConfig();
+  });
+
+  accentColor.addEventListener('input', () => {
     saveConfig();
   });
 
