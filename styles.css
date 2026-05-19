@@ -148,13 +148,13 @@ body.dark-theme .mermaid-error { color: #f28b82; }
 .mermaid-hidden-native { display: none !important; }
 
 /* Remove black borders/padding from Gemini's new Luminous Code Blocks when Mermaid is injected */
-.mermaid-clean-container {
+.formatted-code-block-internal-container:has(.mermaid-wrapper),
+.enable-luminous-code-block:has(.mermaid-wrapper),
+code-block:has(.mermaid-wrapper),
+.code-block:has(.mermaid-wrapper) {
   padding: 0 !important;
   background-color: transparent !important;
   border-radius: 0 !important;
-}
-.mermaid-clean-container-outer {
-  background-color: transparent !important;
   border: none !important;
   margin: 0 !important;
 }
@@ -251,6 +251,8 @@ body.gemini-polish-typography .message-wrapper {
 body.gemini-polish-minimal [data-test-id="bottom-disclaimer"],
 body.gemini-polish-minimal .disclaimer-container,
 body.gemini-polish-minimal .footer-text,
+body.gemini-polish-minimal chat-disclaimer,
+body.gemini-polish-minimal .chat-disclaimer,
 body.gemini-polish-minimal div[class*="disclaimer"],
 body.gemini-polish-minimal span[class*="disclaimer"],
 body.gemini-polish-minimal .bottom-notice {
@@ -282,14 +284,16 @@ body.gemini-polish-minimal model-response-actions:hover,
 body.gemini-polish-minimal .message-wrapper:hover message-actions,
 body.gemini-polish-minimal .message-wrapper:hover .response-actions,
 body.gemini-polish-minimal .message-wrapper:hover .message-actions,
-body.gemini-polish-minimal .conversation-item:hover .response-actions {
+body.gemini-polish-minimal .conversation-item:hover .response-actions,
+body.gemini-polish-minimal model-response:hover model-response-actions {
   opacity: 1 !important;
 }
 
 /* Polish Side Navigation */
 body.gemini-polish-minimal side-navigation-content .item-label,
 body.gemini-polish-minimal side-navigation-content .title,
-body.gemini-polish-minimal [class*="history-item"] {
+body.gemini-polish-minimal [class*="history-item"],
+body.gemini-polish-minimal .navigation-drawer-content * {
   font-size: 13px !important;
   font-family: system-ui, -apple-system, sans-serif !important;
   font-weight: 500 !important;
@@ -314,7 +318,8 @@ body.gemini-polish-theme {
 body.gemini-polish-theme button.mdc-button--filled,
 body.gemini-polish-theme .mat-mdc-button.mdc-button--filled,
 body.gemini-polish-theme .mdc-fab,
-body.gemini-polish-theme [class*="primary-button"] {
+body.gemini-polish-theme [class*="primary-button"],
+body.gemini-polish-theme [class*="submit-button"] {
   background-color: var(--polish-accent-color) !important;
 }
 

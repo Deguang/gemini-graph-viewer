@@ -358,16 +358,10 @@
       document.documentElement.style.removeProperty('--polish-max-width');
     }
 
-    if (currentConfig.accentColor !== '#1a73e8') {
-      body.classList.add('gemini-polish-theme');
-      document.documentElement.style.setProperty('--polish-accent-color', currentConfig.accentColor);
-      // Generate a subtle background version for the accent color
-      document.documentElement.style.setProperty('--polish-accent-bg', currentConfig.accentColor + '15'); // 15 is hex for ~8% opacity
-    } else {
-      body.classList.remove('gemini-polish-theme');
-      document.documentElement.style.removeProperty('--polish-accent-color');
-      document.documentElement.style.removeProperty('--polish-accent-bg');
-    }
+    body.classList.add('gemini-polish-theme');
+    const accent = currentConfig.accentColor || '#1a73e8';
+    document.documentElement.style.setProperty('--polish-accent-color', accent);
+    document.documentElement.style.setProperty('--polish-accent-bg', accent + '15'); // ~8% opacity
 
     // Apply Custom CSS
     let customStyleEl = document.getElementById('gemini-polish-custom-css');
