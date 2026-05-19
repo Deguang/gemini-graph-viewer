@@ -174,9 +174,9 @@ body.gemini-polish-typography .response-content li {
 }
 
 /* Control Max Width */
-body.gemini-polish-typography .conversation-container,
-body.gemini-polish-typography .chat-history,
-body.gemini-polish-typography main {
+body.gemini-polish-typography message-content,
+body.gemini-polish-typography .message-content,
+body.gemini-polish-typography .response-content {
   max-width: var(--polish-max-width, 850px) !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -187,8 +187,6 @@ body.gemini-polish-typography main {
 /* ========================================================= */
 
 /* Hide Disclaimer Footer */
-body.gemini-polish-minimal .disclaimer-container,
-body.gemini-polish-minimal .footer-text,
 body.gemini-polish-minimal [data-test-id="bottom-disclaimer"] {
   display: none !important;
 }
