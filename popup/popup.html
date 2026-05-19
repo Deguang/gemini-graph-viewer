@@ -53,15 +53,28 @@
       <div class="control-group">
         <label style="margin-bottom: 4px;">Font Family</label>
         <select id="fontFamily" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; margin-bottom: 8px;">
-          <option value="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">System Default (Sans-serif)</option>
-          <option value="'PingFang SC', 'San Francisco', sans-serif">Apple PingFang (苹方)</option>
-          <option value="'Microsoft YaHei', 'SimHei', sans-serif">Microsoft YaHei (微软雅黑)</option>
-          <option value="'HarmonyOS Sans SC', 'HarmonyOS Sans', sans-serif">HarmonyOS Sans (鸿蒙)</option>
-          <option value="'Inter', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif">Modern Sans (Inter/Roboto)</option>
-          <option value="'Noto Serif SC', 'Songti SC', 'STSong', serif">Serif (宋体/衬线)</option>
-          <option value="'LXGW WenKai', 'Kaiti SC', 'STKaiti', serif">Kai (霞鹜文楷/楷体)</option>
-          <option value="'JetBrains Mono', 'Fira Code', 'Consolas', monospace">Developer (JetBrains/Fira)</option>
-          <option value="custom">-- Custom Font --</option>
+          <optgroup label="Sans-serif (无衬线 - 现代清晰)">
+            <option value="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">System Default (系统默认)</option>
+            <option value="'PingFang SC', 'San Francisco', sans-serif">Apple PingFang (苹方)</option>
+            <option value="'Microsoft YaHei', 'SimHei', sans-serif">Microsoft YaHei (微软雅黑)</option>
+            <option value="'HarmonyOS Sans SC', 'HarmonyOS Sans', sans-serif">HarmonyOS Sans (鸿蒙)</option>
+            <option value="'OPPOSans', 'OPPO Sans', sans-serif">OPPO Sans (OPPO 简黑)</option>
+            <option value="'MiSans', sans-serif">MiSans (小米无衬线)</option>
+            <option value="'Inter', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif">Modern Sans (Inter/Helvetica)</option>
+          </optgroup>
+          <optgroup label="Serif (衬线体 - 传统优雅)">
+            <option value="'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', serif">Source Han Serif (思源宋体)</option>
+            <option value="'Georgia', 'Palatino', 'Songti SC', serif">Georgia & Songti (乔治亚与宋体)</option>
+            <option value="'Garamond', 'Times New Roman', 'Songti SC', serif">Garamond (加拉蒙)</option>
+          </optgroup>
+          <optgroup label="Calligraphy & Mono (书法与等宽)">
+            <option value="'LXGW WenKai', 'Kaiti SC', 'STKaiti', serif">LXGW WenKai (霞鹜文楷)</option>
+            <option value="'FangSong', 'STFangsong', serif">FangSong (仿宋)</option>
+            <option value="'JetBrains Mono', 'Fira Code', 'Consolas', monospace">Developer (JetBrains/Fira)</option>
+          </optgroup>
+          <optgroup label="Custom (自定义)">
+            <option value="custom">-- Custom Font (输入字体名) --</option>
+          </optgroup>
         </select>
         <input type="text" id="customFontName" placeholder="e.g., 'Alibaba PuHuiTi'" style="display: none; width: 100%; box-sizing: border-box; padding: 4px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; margin-bottom: 8px;">
       </div>
