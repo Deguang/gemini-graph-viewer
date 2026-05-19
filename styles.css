@@ -147,6 +147,18 @@ body.dark-theme .mermaid-error { color: #f28b82; }
 .mermaid-controlled-pre { display: none !important; }
 .mermaid-hidden-native { display: none !important; }
 
+/* Remove black borders/padding from Gemini's new Luminous Code Blocks when Mermaid is injected */
+.mermaid-clean-container {
+  padding: 0 !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+.mermaid-clean-container-outer {
+  background-color: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+}
+
 /* ========================================================= */
 /* Gemini Polish: Typography & Layout                        */
 /* ========================================================= */

@@ -90,10 +90,16 @@
     if (!preEl) return;
     preEl.style.display = 'none';
 
-    const nativeCodeBlock = preEl.closest('.code-block');
+    const nativeCodeBlock = preEl.closest('.code-block') || preEl.closest('code-block');
     if (nativeCodeBlock) {
+      nativeCodeBlock.classList.add('mermaid-clean-container-outer');
       const nativeHeader = nativeCodeBlock.querySelector('.code-block-decoration');
       if (nativeHeader) nativeHeader.classList.add('mermaid-hidden-native');
+    }
+
+    const luminousInner = preEl.closest('.formatted-code-block-internal-container');
+    if (luminousInner) {
+      luminousInner.classList.add('mermaid-clean-container');
     }
 
     const wrapper = document.createElement('div');
