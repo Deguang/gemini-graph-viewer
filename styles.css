@@ -171,62 +171,32 @@ body.gemini-polish-typography .response-content {
   letter-spacing: 0.02em;
 }
 
-/* Force Font Properties on all text nodes inside messages, excluding icons */
-body.gemini-polish-typography message-content *,
-body.gemini-polish-typography .message-content *,
-body.gemini-polish-typography .response-content *,
-body.gemini-polish-typography model-response *,
-body.gemini-polish-typography user-query *,
-body.gemini-polish-typography [data-test-id="message-content"] *,
-body.gemini-polish-typography .markdown * {
-  /* Only apply to text elements, exclude SVG, IMG, Code, and Icons */
+/* Scope font properties to main text containers, avoiding UI components, sidebars, and chips */
+body.gemini-polish-typography .markdown,
+body.gemini-polish-typography .message-content,
+body.gemini-polish-typography message-content,
+body.gemini-polish-typography user-query,
+body.gemini-polish-typography .user-message-text {
+  font-family: var(--polish-font-family) !important;
 }
 
-/* Explicitly target text tags to avoid collateral damage but ensure full coverage */
-body.gemini-polish-typography message-content p,
-body.gemini-polish-typography .message-content p,
-body.gemini-polish-typography message-content li,
-body.gemini-polish-typography .message-content li,
-body.gemini-polish-typography message-content span:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
-body.gemini-polish-typography .message-content span:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
-body.gemini-polish-typography message-content a,
-body.gemini-polish-typography .message-content a,
-body.gemini-polish-typography message-content div:not([class*="code"]):not(.mermaid-wrapper),
-body.gemini-polish-typography .message-content div:not([class*="code"]):not(.mermaid-wrapper),
-body.gemini-polish-typography model-response p,
-body.gemini-polish-typography model-response li,
-body.gemini-polish-typography model-response span:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
-body.gemini-polish-typography user-query p,
-body.gemini-polish-typography user-query span:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
 body.gemini-polish-typography .markdown p,
 body.gemini-polish-typography .markdown li,
-body.gemini-polish-typography .markdown span:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
-body.gemini-polish-typography h1,
-body.gemini-polish-typography h2,
-body.gemini-polish-typography h3,
-body.gemini-polish-typography h4,
-body.gemini-polish-typography h5,
-body.gemini-polish-typography h6,
-body.gemini-polish-typography td,
-body.gemini-polish-typography th {
+body.gemini-polish-typography .markdown td,
+body.gemini-polish-typography .markdown th,
+body.gemini-polish-typography user-query .text,
+body.gemini-polish-typography .user-message-text {
   font-family: var(--polish-font-family) !important;
   font-size: var(--polish-font-size, 16px) !important;
   line-height: var(--polish-line-height, 1.7) !important;
 }
 
-body.gemini-polish-typography message-content p,
-body.gemini-polish-typography .message-content p,
-body.gemini-polish-typography .response-content p,
-body.gemini-polish-typography model-response p,
-body.gemini-polish-typography user-query p,
-body.gemini-polish-typography .markdown p {
+body.gemini-polish-typography .markdown p,
+body.gemini-polish-typography user-query .text,
+body.gemini-polish-typography .user-message-text {
   margin-bottom: var(--polish-paragraph-spacing, 1.2em) !important;
 }
 
-body.gemini-polish-typography message-content li,
-body.gemini-polish-typography .message-content li,
-body.gemini-polish-typography .response-content li,
-body.gemini-polish-typography model-response li,
 body.gemini-polish-typography .markdown li {
   margin-bottom: 0.5em !important;
 }
