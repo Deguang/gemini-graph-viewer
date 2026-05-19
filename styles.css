@@ -262,14 +262,23 @@ body.gemini-polish-typography .markdown blockquote {
 
 /* Polish Side Navigation Typography (Scoped to side-navigation-content and history items) */
 body.gemini-polish-typography side-navigation-content *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
-body.gemini-polish-typography .navigation-drawer-content *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]) {
+body.gemini-polish-typography .navigation-drawer-content *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
+body.gemini-polish-typography conversation-list *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
+body.gemini-polish-typography chat-history *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]),
+body.gemini-polish-typography recent-chats *:not(.material-symbols-outlined):not(mat-icon):not([class*="icon"]) {
   font-family: var(--polish-font-family) !important;
 }
 
+/* Force Nav Font Size */
 body.gemini-polish-typography side-navigation-content .item-label,
 body.gemini-polish-typography side-navigation-content .title,
+body.gemini-polish-typography .navigation-drawer-content .title,
 body.gemini-polish-typography [class*="history-item"],
-body.gemini-polish-typography .history-item {
+body.gemini-polish-typography .history-item,
+body.gemini-polish-typography conversation-list div,
+body.gemini-polish-typography conversation-list span,
+body.gemini-polish-typography conversation-list a,
+body.gemini-polish-typography recent-chats span {
   font-size: var(--polish-nav-font-size, 13px) !important;
   font-weight: 500 !important;
 }
@@ -277,10 +286,15 @@ body.gemini-polish-typography .history-item {
 /* Control spacing (padding) of history items to adjust density */
 body.gemini-polish-typography side-navigation-content [class*="history-item"],
 body.gemini-polish-typography side-navigation-content a.navigation-item,
-body.gemini-polish-typography side-navigation-content .navigation-item {
+body.gemini-polish-typography side-navigation-content .navigation-item,
+body.gemini-polish-typography conversation-list a,
+body.gemini-polish-typography recent-chats a,
+body.gemini-polish-typography .recent-chat-item,
+body.gemini-polish-typography [data-test-id*="history-item"] {
   padding-top: var(--polish-nav-spacing, 8px) !important;
   padding-bottom: var(--polish-nav-spacing, 8px) !important;
   min-height: auto !important; /* Override Gemini's hardcoded height to allow spacing adjustments */
+  height: auto !important;
 }
 
 /* Control Max Width directly on the chat message blocks to avoid breaking layout */
@@ -375,4 +389,29 @@ body.gemini-polish-theme .user-query-bubble-with-background {
   background-color: var(--polish-accent-bg) !important;
   border-radius: 12px;
   padding: 12px 16px;
+}
+
+/* Side Navigation Active/Highlighted Item */
+body.gemini-polish-theme side-navigation-content [aria-selected="true"],
+body.gemini-polish-theme side-navigation-content [aria-current="page"],
+body.gemini-polish-theme side-navigation-content .selected,
+body.gemini-polish-theme side-navigation-content .active,
+body.gemini-polish-theme conversation-list [aria-selected="true"],
+body.gemini-polish-theme conversation-list [aria-current="page"],
+body.gemini-polish-theme conversation-list .selected,
+body.gemini-polish-theme conversation-list .active,
+body.gemini-polish-theme recent-chats [aria-selected="true"],
+body.gemini-polish-theme recent-chats .selected,
+body.gemini-polish-theme [data-test-id*="history-item"][aria-selected="true"] {
+  background-color: var(--polish-accent-bg) !important;
+  color: var(--polish-accent-color) !important;
+  font-weight: 600 !important;
+  border-radius: 8px; /* Or whatever Gemini's default is, usually a pill shape, but let's just color it */
+}
+
+/* Ensure text inside active nav item also gets colored */
+body.gemini-polish-theme side-navigation-content [aria-selected="true"] *,
+body.gemini-polish-theme conversation-list [aria-selected="true"] *,
+body.gemini-polish-theme recent-chats [aria-selected="true"] * {
+  color: var(--polish-accent-color) !important;
 }
