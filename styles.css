@@ -154,7 +154,7 @@ body.dark-theme .mermaid-error { color: #f28b82; }
 body.gemini-polish-typography message-content,
 body.gemini-polish-typography .message-content,
 body.gemini-polish-typography .response-content {
-  font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif !important;
+  font-family: var(--polish-font-family) !important;
   line-height: var(--polish-line-height, 1.7) !important;
   letter-spacing: 0.02em;
 }
@@ -176,7 +176,7 @@ body.gemini-polish-typography .message-content div {
 body.gemini-polish-typography message-content p,
 body.gemini-polish-typography .message-content p,
 body.gemini-polish-typography .response-content p {
-  margin-bottom: 1.2em !important;
+  margin-bottom: var(--polish-paragraph-spacing, 1.2em) !important;
 }
 
 body.gemini-polish-typography message-content li,

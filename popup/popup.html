@@ -51,15 +51,28 @@
 
     <div id="typography-controls" class="sub-controls disabled">
       <div class="control-group">
+        <label style="margin-bottom: 4px;">Font Family</label>
+        <select id="fontFamily" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; margin-bottom: 8px;">
+          <option value="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">System Default (Sans-serif)</option>
+          <option value="'Noto Serif SC', 'Songti SC', 'STSong', serif">Serif (宋体/衬线)</option>
+          <option value="'LXGW WenKai', 'Kaiti SC', 'STKaiti', serif">Kai (楷体/手写)</option>
+          <option value="'JetBrains Mono', 'Roboto Mono', monospace">Monospace (等宽)</option>
+        </select>
+      </div>
+      <div class="control-group">
         <label>Line Height: <span id="lineHeightVal">1.7</span></label>
-        <input type="range" id="lineHeight" min="1.4" max="2.2" step="0.1" value="1.7">
+        <input type="range" id="lineHeight" min="1.4" max="2.4" step="0.1" value="1.7">
       </div>
       <div class="control-group">
-        <label>Base Font Size (px): <span id="fontSizeVal">16</span></label>
-        <input type="range" id="fontSize" min="14" max="20" step="1" value="16">
+        <label>Paragraph Spacing: <span id="paragraphSpacingVal">1.2</span>em</label>
+        <input type="range" id="paragraphSpacing" min="0.5" max="2.5" step="0.1" value="1.2">
       </div>
       <div class="control-group">
-        <label>Content Max Width (px): <span id="maxWidthVal">850</span></label>
+        <label>Base Font Size: <span id="fontSizeVal">16</span>px</label>
+        <input type="range" id="fontSize" min="14" max="22" step="1" value="16">
+      </div>
+      <div class="control-group">
+        <label>Content Max Width: <span id="maxWidthVal">850</span>px</label>
         <input type="range" id="maxWidth" min="600" max="1200" step="50" value="850">
       </div>
     </div>

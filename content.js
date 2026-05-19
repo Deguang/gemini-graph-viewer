@@ -314,7 +314,9 @@
     enableGraph: true,
     enableMinimal: false,
     enableTypography: false,
+    fontFamily: 'system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif',
     lineHeight: 1.7,
+    paragraphSpacing: 1.2,
     fontSize: 16,
     maxWidth: 850,
     accentColor: '#1a73e8',
@@ -329,12 +331,16 @@
     
     if (currentConfig.enableTypography) {
       body.classList.add('gemini-polish-typography');
+      document.documentElement.style.setProperty('--polish-font-family', currentConfig.fontFamily || 'system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif');
       document.documentElement.style.setProperty('--polish-line-height', currentConfig.lineHeight);
+      document.documentElement.style.setProperty('--polish-paragraph-spacing', `${currentConfig.paragraphSpacing}em`);
       document.documentElement.style.setProperty('--polish-font-size', `${currentConfig.fontSize}px`);
       document.documentElement.style.setProperty('--polish-max-width', `${currentConfig.maxWidth}px`);
     } else {
       body.classList.remove('gemini-polish-typography');
+      document.documentElement.style.removeProperty('--polish-font-family');
       document.documentElement.style.removeProperty('--polish-line-height');
+      document.documentElement.style.removeProperty('--polish-paragraph-spacing');
       document.documentElement.style.removeProperty('--polish-font-size');
       document.documentElement.style.removeProperty('--polish-max-width');
     }

@@ -5,8 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const enableTypography = document.getElementById('enableTypography');
   const typographyControls = document.getElementById('typography-controls');
   
+  const fontFamily = document.getElementById('fontFamily');
   const lineHeight = document.getElementById('lineHeight');
   const lineHeightVal = document.getElementById('lineHeightVal');
+  const paragraphSpacing = document.getElementById('paragraphSpacing');
+  const paragraphSpacingVal = document.getElementById('paragraphSpacingVal');
   const fontSize = document.getElementById('fontSize');
   const fontSizeVal = document.getElementById('fontSizeVal');
   const maxWidth = document.getElementById('maxWidth');
@@ -19,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     enableGraph: true,
     enableMinimal: false,
     enableTypography: false,
+    fontFamily: 'system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif',
     lineHeight: 1.7,
+    paragraphSpacing: 1.2,
     fontSize: 16,
     maxWidth: 850,
     accentColor: '#1a73e8',
@@ -29,8 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
     enableMinimal.checked = items.enableMinimal;
     enableTypography.checked = items.enableTypography;
     
+    fontFamily.value = items.fontFamily;
+    
     lineHeight.value = items.lineHeight;
     lineHeightVal.textContent = items.lineHeight;
+    
+    paragraphSpacing.value = items.paragraphSpacing;
+    paragraphSpacingVal.textContent = items.paragraphSpacing;
     
     fontSize.value = items.fontSize;
     fontSizeVal.textContent = items.fontSize;
@@ -59,7 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
       enableGraph: enableGraph.checked,
       enableMinimal: enableMinimal.checked,
       enableTypography: enableTypography.checked,
+      fontFamily: fontFamily.value,
       lineHeight: lineHeight.value,
+      paragraphSpacing: paragraphSpacing.value,
       fontSize: fontSize.value,
       maxWidth: maxWidth.value,
       accentColor: accentColor.value,
@@ -76,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Event Listeners
-  [enableGraph, enableMinimal, enableTypography].forEach(el => {
+  [enableGraph, enableMinimal, enableTypography, fontFamily].forEach(el => {
     el.addEventListener('change', () => {
       updateTypographyState();
       saveConfig();
@@ -85,6 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   lineHeight.addEventListener('input', (e) => {
     lineHeightVal.textContent = e.target.value;
+    saveConfig();
+  });
+
+  paragraphSpacing.addEventListener('input', (e) => {
+    paragraphSpacingVal.textContent = e.target.value;
     saveConfig();
   });
 
