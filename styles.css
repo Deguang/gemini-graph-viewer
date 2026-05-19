@@ -191,6 +191,26 @@ body.gemini-polish-typography .user-message-text {
   line-height: var(--polish-line-height, 1.7) !important;
 }
 
+/* Proportional scaling for headers based on the base font size */
+body.gemini-polish-typography .markdown h1,
+body.gemini-polish-typography .markdown h2,
+body.gemini-polish-typography .markdown h3,
+body.gemini-polish-typography .markdown h4,
+body.gemini-polish-typography .markdown h5,
+body.gemini-polish-typography .markdown h6 {
+  font-family: var(--polish-font-family) !important;
+  line-height: 1.4 !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+body.gemini-polish-typography .markdown h1 { font-size: calc(var(--polish-font-size, 16px) * 1.75) !important; }
+body.gemini-polish-typography .markdown h2 { font-size: calc(var(--polish-font-size, 16px) * 1.5) !important; }
+body.gemini-polish-typography .markdown h3 { font-size: calc(var(--polish-font-size, 16px) * 1.25) !important; }
+body.gemini-polish-typography .markdown h4 { font-size: calc(var(--polish-font-size, 16px) * 1.1) !important; }
+body.gemini-polish-typography .markdown h5,
+body.gemini-polish-typography .markdown h6 { font-size: var(--polish-font-size, 16px) !important; }
+
 body.gemini-polish-typography .markdown p,
 body.gemini-polish-typography user-query .text,
 body.gemini-polish-typography .user-message-text {
