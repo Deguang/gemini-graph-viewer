@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Gemini Polish & Graph Viewer",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "Professional split-view Mermaid diagram renderer and reading typography/minimalism enhancer for Google Gemini.",
   "icons": {
     "16": "icon.png",
