@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Gemini Polish & Graph Viewer",
-  "version": "1.1.17",
-  "description": "Professional split-view Mermaid diagram renderer and reading typography/minimalism enhancer for Google Gemini.",
+  "name": "__MSG_extName__",
+  "version": "1.3.0",
+  "description": "__MSG_extDesc__",
   "icons": {
     "16": "icon.png",
     "48": "icon.png",
@@ -12,7 +12,11 @@
     "default_popup": "popup/popup.html",
     "default_icon": "icon.png"
   },
-  "permissions": ["scripting", "tabs", "storage"],
+  "permissions": [
+    "scripting",
+    "tabs",
+    "storage"
+  ],
   "host_permissions": [
     "*://gemini.google.com/*"
   ],
@@ -21,15 +25,33 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://gemini.google.com/*"],
-      "js": ["lib/mermaid.min.js", "content.js"],
-      "css": ["styles.css"]
+      "matches": [
+        "*://gemini.google.com/*"
+      ],
+      "js": [
+        "shared/config.js",
+        "shared/css-engine.js",
+        "shared/markdown.js",
+        "shared/mermaid-clean.js",
+        "lib/mermaid.min.js",
+        "content.js"
+      ],
+      "css": [
+        "styles/mermaid.css",
+        "styles/actions.css"
+      ],
+      "run_at": "document_start"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["lib/mermaid.min.js"],
-      "matches": ["*://gemini.google.com/*"]
+      "resources": [
+        "lib/mermaid.min.js"
+      ],
+      "matches": [
+        "*://gemini.google.com/*"
+      ]
     }
-  ]
+  ],
+  "default_locale": "en"
 }

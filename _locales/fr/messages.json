@@ -1,0 +1,204 @@
+{
+  "extName": {
+    "message": "Gemini Polish & Graph Viewer"
+  },
+  "extDesc": {
+    "message": "Lecture personnalisable pour Google Gemini : typographie, palettes et rendu de diagrammes Mermaid en vue partagée."
+  },
+  "preset_native": {
+    "message": "Gemini d’origine"
+  },
+  "preset_comfort": {
+    "message": "Confortable"
+  },
+  "preset_focus": {
+    "message": "Focus"
+  },
+  "scheme_native": {
+    "message": "Gemini d’origine"
+  },
+  "scheme_sepia": {
+    "message": "Sépia"
+  },
+  "scheme_amber": {
+    "message": "Ambre"
+  },
+  "slider_fontSize": {
+    "message": "Taille"
+  },
+  "slider_lineHeight": {
+    "message": "Interligne"
+  },
+  "slider_paragraphSpacing": {
+    "message": "Espace entre §"
+  },
+  "slider_maxWidth": {
+    "message": "Largeur"
+  },
+  "slider_navFontSize": {
+    "message": "Barre : taille"
+  },
+  "slider_navSpacing": {
+    "message": "Barre : espace"
+  },
+  "section_reading": {
+    "message": "Lecture (contenu)"
+  },
+  "section_interface": {
+    "message": "Interface"
+  },
+  "section_enhance": {
+    "message": "Améliorations"
+  },
+  "section_escape": {
+    "message": "Échappatoire"
+  },
+  "row_font": {
+    "message": "Police"
+  },
+  "row_justify": {
+    "message": "Justifier"
+  },
+  "row_justify_desc": {
+    "message": "Coupures CJK plus nettes"
+  },
+  "row_headings": {
+    "message": "Échelle des titres"
+  },
+  "row_text": {
+    "message": "Couleur du texte"
+  },
+  "row_link": {
+    "message": "Couleur des liens"
+  },
+  "row_emphasis": {
+    "message": "Couleur d’accent"
+  },
+  "row_emphasis_desc": {
+    "message": "Gras et citations"
+  },
+  "row_code": {
+    "message": "Couleurs du code"
+  },
+  "row_code_desc": {
+    "message": "Code en ligne et blocs"
+  },
+  "row_border": {
+    "message": "Tableaux et filets"
+  },
+  "row_bg": {
+    "message": "Fond de page"
+  },
+  "row_uiAccent": {
+    "message": "Accent de l’interface"
+  },
+  "row_uiAccent_desc": {
+    "message": "Boutons, chat actuel, bulle de saisie"
+  },
+  "row_disclaimer": {
+    "message": "Masquer l’avertissement"
+  },
+  "row_fade": {
+    "message": "Actions au survol"
+  },
+  "row_fade_desc": {
+    "message": "J’aime, partager, copier…"
+  },
+  "row_mermaid": {
+    "message": "Diagrammes Mermaid"
+  },
+  "row_mermaid_desc": {
+    "message": "Visionneuse en vue partagée"
+  },
+  "label_preset": {
+    "message": "Style"
+  },
+  "label_scheme": {
+    "message": "Couleurs"
+  },
+  "advanced": {
+    "message": "Avancé"
+  },
+  "reset_btn": {
+    "message": "Réinitialiser au style actuel"
+  },
+  "custom_css_hint": {
+    "message": "Les règles du moteur utilisent !important : votre CSS doit en faire autant pour l’emporter."
+  },
+  "font_custom_placeholder": {
+    "message": "ex. « Inter »"
+  },
+  "palette_light": {
+    "message": "Palette claire"
+  },
+  "palette_dark": {
+    "message": "Palette sombre"
+  },
+  "palette_follows": {
+    "message": "suit Gemini"
+  },
+  "inert_hint": {
+    "message": "« D’origine » laisse cela à Gemini"
+  },
+  "save_failed": {
+    "message": "Échec de l’enregistrement : $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "sync_failed": {
+    "message": "Enregistré sur cet appareil (échec de la synchro : $1)",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "css_too_big": {
+    "message": "Enregistré · CSS perso au-delà de 8 Ko, cet appareil uniquement"
+  },
+  "toast_title": {
+    "message": "Gemini Polish est actif"
+  },
+  "toast_desc": {
+    "message": "La typographie de lecture confortable est active. Ouvrez l’icône de la barre d’outils pour tout ajuster, ou choisissez « Gemini d’origine » pour revenir à l’interface initiale."
+  },
+  "toast_native": {
+    "message": "Utiliser l’original"
+  },
+  "toast_ok": {
+    "message": "J’ai compris"
+  },
+  "font_group_sans": {
+    "message": "Sans empattement"
+  },
+  "font_group_serif": {
+    "message": "Avec empattement"
+  },
+  "font_group_mono": {
+    "message": "Calligraphie et chasse fixe"
+  },
+  "font_custom_option": {
+    "message": "— Nom de police —"
+  },
+  "custom": {
+    "message": "Personnalisé"
+  },
+  "row_copymd": {
+    "message": "Copier en Markdown"
+  },
+  "row_copymd_desc": {
+    "message": "Ajoute un bouton qui contourne la copie native de Gemini"
+  },
+  "copy_md": {
+    "message": "En Markdown"
+  },
+  "copy_done": {
+    "message": "Copié"
+  },
+  "copy_failed": {
+    "message": "Échec de la copie"
+  }
+}

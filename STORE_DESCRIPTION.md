@@ -1,49 +1,128 @@
 # Chrome Web Store Listing Assets
 
-## 1. One-line Summary (Max 132 chars)
-Professional split-view Mermaid diagram renderer for Google Gemini. Real-time preview, auto-fit, and export.
+> Regenerated for 1.2.0. Every number below is taken from `shared/config.js`
+> — if you change the presets, toggles, schemes or locales, update this file
+> in the same commit or the listing goes stale again.
 
 ---
 
-## 2. Detailed Description (Long)
+## 1. Short summary (max 132 chars)
 
-**Elevate your Google Gemini experience with the ultimate diagramming workbench.**
+```
+Reading typography, colour schemes and a split-view Mermaid renderer for Google Gemini.
+```
+*(86 characters)*
 
-Tired of squinting at raw Mermaid code? **Gemini Graph (Flowchart) Split-Viewer** transforms raw syntax into beautiful, high-definition diagrams instantly. Designed for developers, architects, and visual thinkers, this extension provides a professional-grade interface directly within your Gemini chat.
-
-### ✨ Key Features:
-
-*   **⚡ Professional Split-View**: Watch your diagrams come to life in real-time. View source code and the rendered graph side-by-side or vertically stacked.
-*   **🔍 Ultra-Clear Vector Rendering**: No more blurry images. Our engine renders with 1:1 vector precision, ensuring crisp text and sharp lines at any zoom level.
-*   **📐 Smart Auto-Fit**: The diagram automatically maximizes its size to fill the preview area during generation. Focus on the logic, not the layout.
-*   **🌑 Native Gemini Integration**: Fully supports Gemini's Dark and Light themes with a refined, "glassmorphism" UI that feels like a native feature.
-*   **🚀 Fullscreen "Teleport" Mode**: Break free from chat bubble constraints. One click expands your diagram to the entire screen for deep analysis.
-*   **🛠 Interactive Controls**: Smooth mouse wheel/trackpad zoom and drag-to-pan support for navigating complex architectures.
-*   **📤 Export & Copy**: Export your masterpiece as a high-quality SVG file or copy the source code with a single click.
-
-### 🔒 Privacy & Security:
-*   **Trusted Types Compliant**: Built with the latest security standards to work seamlessly with Google's strict CSP.
-*   **Local Rendering**: All diagrams are rendered locally in your browser. Your data never leaves your machine.
+The **name** and **short description** are localised automatically: the manifest
+uses `__MSG_extName__` / `__MSG_extDesc__`, so the Web Store serves whichever of
+the 7 bundled locales matches the viewer. Only this long description has to be
+entered per-language in the developer dashboard.
 
 ---
 
-## 3. 中文详细描述 (CN)
+## 2. Detailed description
 
-**让 Google Gemini 的图表能力更进一步 —— 您的专业图形工作台。**
+**Gemini Polish turns Google Gemini into a reading surface you actually want to
+spend time in — and keeps the diagram viewer you already know.**
 
-还在对着一堆 Mermaid 源代码发愁吗？**Gemini Graph (Flowchart) Split-Viewer** 能将原始语法瞬间转化为精美的高清图表。专为开发者、架构师和产品经理打造，在 Gemini 界面中为您提供专业级的分栏交互体验。
+Long answers from Gemini are dense: tight line height, no paragraph spacing, a
+column that runs the full width of your monitor. Gemini Polish fixes the reading
+experience without replacing the app you already know how to use.
 
-### ✨ 核心亮点：
+### Pick a style, pick a palette
 
-*   **⚡ 专业分栏视图**：像 IDE 一样工作。支持代码与图表左右并排或上下堆叠，支持单侧一键折叠。
-*   **🔍 极致清晰度**：采用 1:1 原始矢量渲染。无论是在高分屏还是全屏模式下，文字和线条永远锐利清晰。
-*   **📐 智能动态适配**：在图表生成过程中自动计算最佳比例，始终保持最大化展示，无需手动调整。
-*   **🚀 深度全屏模式**：独家“传送门”技术，让图表彻底脱离聊天气泡限制，开启沉浸式大屏阅读。
-*   **🌑 原生视觉融合**：完美适配 Gemini 官方深/浅色主题，精致的毛玻璃 UI 带来官方功能般的丝滑感。
-*   **🛠 强大交互**：支持鼠标滚轮/触摸板自由缩放，支持鼠标拖拽平移，轻松查看超大型系统架构。
-*   **📤 一键导出与复制**：支持导出超清 SVG 矢量图，或一键复制 Mermaid 源代码。
+Two controls, and they do not overlap. **Style** decides how much of Gemini's
+layout gets replaced. **Colour** decides what it looks like. Any combination
+works.
+
+**Styles**
+- **Native Gemini** — changes nothing. Your escape hatch.
+- **Comfortable** — 17px type, 1.7 line height, real paragraph spacing, a
+  readable 860px column, proper heading scale.
+- **Focus** — the above, larger and airier (18px / 1.9 / 700px column), with the
+  disclaimer footer hidden and the action buttons revealed only on hover.
+
+**Colour schemes** — six, each shipping a matched light *and* dark palette of
+eight colours:
+- **Native Gemini** — a true pass-through. Not a copy of Gemini's colours: it
+  emits no colour rules at all, so Google's own palette shows through and keeps
+  tracking their updates.
+- **Solarized**, **Nord**, **Gruvbox** — faithful reproductions of the published
+  palettes.
+- **Amber** — the only scheme that keeps Gemini's white ground and warms just
+  the accent.
+- **Sepia** — a warm paper tone for long reading sessions.
+
+Gemini's own light/dark switch drives which palette is live — nothing to toggle
+twice, and no flash when you change theme.
+
+### Split-view Mermaid renderer
+
+The original feature, unchanged. Any `graph`, `flowchart`, `sequenceDiagram`,
+`mindmap`, `erDiagram`, `classDiagram`, `stateDiagram`, `gantt`, `timeline` or
+`pie` block in a Gemini answer renders next to its source. Pan, zoom, auto-fit,
+switch between side-by-side and stacked, go fullscreen, copy the code, export
+SVG, or copy the diagram as a 2× PNG.
+
+### A copy button that does not hang the tab
+
+Gemini's own "Copy response" can lock the page on long answers. This adds an
+**MD** button beside it that serialises the answer itself — headings, nested
+lists, blockquotes, tables, and fenced code blocks with their language label —
+in a single pass over the rendered content. Same clipboard, none of the wait.
+
+### When you want the knobs
+
+Advanced opens 21 individual switches, grouped by **what they act on** rather
+than by property type — Reading (content), Interface (chrome), Enhancements.
+Every colour swatch sits on the same row as the switch that applies it, so you
+can always tell what a colour will repaint. Six sliders cover size, line height,
+paragraph gap, column width and sidebar density. A Custom CSS box is there when
+you want something the toggles do not cover.
+
+### Built to survive Gemini's redesigns
+
+Selectors are anchored to the parts of Gemini's DOM that change least — Angular
+custom element tags, `data-test-id` attributes, and Google's own design tokens —
+and every anchor was verified against the live site. When Google ships a UI
+update, only the affected toggle is at risk; the rest keep working, and you can
+switch the broken one off without losing the extension.
+
+### Details that took the work
+
+- **Contrast is checked, not eyeballed.** Every palette we author clears WCAG AA
+  (4.5:1) for text, links and inline code — against the *surface* colour, not
+  just the background. The three reproduced palettes keep their published values.
+- **Your settings cannot be lost to a sync hiccup.** Settings are written
+  locally first and mirrored to your Google account in the background, so a
+  throttled or offline sync never costs you a change.
+- **Changes apply as you make them** — no reload, no save button.
+- **7 languages**: English, 简体中文, 繁體中文, 日本語, हिन्दी, Deutsch, Français.
+
+### Privacy
+
+No analytics, no tracking, no remote code, no network requests of its own. The
+extension runs only on `gemini.google.com` and stores your settings in Chrome's
+own storage. Nothing about your conversations is read, collected or transmitted.
 
 ---
 
-## 4. Search Keywords (Tags)
-Gemini, Mermaid, Diagram, Flowchart, Renderer, Graph, Visualization, AI, Productivity, Developer Tools
+*Gemini Polish is an independent project. It is not affiliated with, endorsed
+by, or sponsored by Google. "Google" and "Gemini" are trademarks of Google LLC,
+used here only to describe what this extension works with.*
+
+---
+
+## 3. Notes for whoever updates the listing
+
+- The published listing is still **1.0.3 — "Gemini Graph (Flowchart)
+  Split-Viewer"**, which describes only the Mermaid renderer. Everything above
+  is new to the listing.
+- **The name change is a judgement call, not a formality.** The existing
+  installs came for a diagram viewer; the store URL slug
+  (`gemini-graph-flowchart-sp`) is permanent and will keep saying "graph"
+  regardless. Keeping "Graph Viewer" in the name is what the current manifest
+  does, and it is the safer read for existing users.
+- Screenshots need reshooting — the current ones predate the settings panel.
+- Add the affiliation disclaimer above to the listing body; it is not on the
+  live page today.

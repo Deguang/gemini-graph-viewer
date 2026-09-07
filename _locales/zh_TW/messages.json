@@ -1,0 +1,204 @@
+{
+  "extName": {
+    "message": "Gemini Polish & Graph Viewer"
+  },
+  "extDesc": {
+    "message": "為 Google Gemini 打造可自訂的閱讀體驗：排版、配色方案、介面簡化，以及分欄式 Mermaid 圖表算繪器。"
+  },
+  "preset_native": {
+    "message": "原生 Gemini"
+  },
+  "preset_comfort": {
+    "message": "舒適閱讀"
+  },
+  "preset_focus": {
+    "message": "沉浸"
+  },
+  "scheme_native": {
+    "message": "原生 Gemini"
+  },
+  "scheme_sepia": {
+    "message": "Sepia（護眼）"
+  },
+  "scheme_amber": {
+    "message": "Amber（琥珀）"
+  },
+  "slider_fontSize": {
+    "message": "字級"
+  },
+  "slider_lineHeight": {
+    "message": "行高"
+  },
+  "slider_paragraphSpacing": {
+    "message": "段落間距"
+  },
+  "slider_maxWidth": {
+    "message": "寬度"
+  },
+  "slider_navFontSize": {
+    "message": "側欄字級"
+  },
+  "slider_navSpacing": {
+    "message": "側欄間距"
+  },
+  "section_reading": {
+    "message": "閱讀（內文）"
+  },
+  "section_interface": {
+    "message": "介面（外框）"
+  },
+  "section_enhance": {
+    "message": "增強功能"
+  },
+  "section_escape": {
+    "message": "逃生出口"
+  },
+  "row_font": {
+    "message": "字型"
+  },
+  "row_justify": {
+    "message": "左右對齊"
+  },
+  "row_justify_desc": {
+    "message": "CJK 斷行更整齊"
+  },
+  "row_headings": {
+    "message": "標題分級"
+  },
+  "row_text": {
+    "message": "內文文字色"
+  },
+  "row_link": {
+    "message": "連結色"
+  },
+  "row_emphasis": {
+    "message": "強調色"
+  },
+  "row_emphasis_desc": {
+    "message": "粗體與引用區塊"
+  },
+  "row_code": {
+    "message": "程式碼配色"
+  },
+  "row_code_desc": {
+    "message": "行內程式碼與程式碼區塊"
+  },
+  "row_border": {
+    "message": "表格與分隔線"
+  },
+  "row_bg": {
+    "message": "頁面背景"
+  },
+  "row_uiAccent": {
+    "message": "介面強調色"
+  },
+  "row_uiAccent_desc": {
+    "message": "按鈕、目前對話、提問泡泡"
+  },
+  "row_disclaimer": {
+    "message": "隱藏免責聲明"
+  },
+  "row_fade": {
+    "message": "滑鼠停留才顯示操作鈕"
+  },
+  "row_fade_desc": {
+    "message": "喜歡、分享、複製等"
+  },
+  "row_mermaid": {
+    "message": "Mermaid 圖表算繪"
+  },
+  "row_mermaid_desc": {
+    "message": "分欄式圖表檢視器"
+  },
+  "label_preset": {
+    "message": "風格"
+  },
+  "label_scheme": {
+    "message": "配色"
+  },
+  "advanced": {
+    "message": "進階"
+  },
+  "reset_btn": {
+    "message": "重設為目前風格"
+  },
+  "custom_css_hint": {
+    "message": "引擎規則帶有 !important，自訂 CSS 也需標註才能覆寫。"
+  },
+  "font_custom_placeholder": {
+    "message": "例如 'Noto Sans TC'"
+  },
+  "palette_light": {
+    "message": "淺色配色"
+  },
+  "palette_dark": {
+    "message": "深色配色"
+  },
+  "palette_follows": {
+    "message": "跟隨 Gemini"
+  },
+  "inert_hint": {
+    "message": "「原生」配色不會覆寫此項"
+  },
+  "save_failed": {
+    "message": "儲存失敗：$1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "sync_failed": {
+    "message": "已存於本機（雲端同步失敗：$1）",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "css_too_big": {
+    "message": "已儲存 · 自訂 CSS 超過 8KB，僅本機生效"
+  },
+  "toast_title": {
+    "message": "Gemini Polish 已啟用"
+  },
+  "toast_desc": {
+    "message": "已套用「舒適閱讀」排版。點選工具列圖示可調整任何細節，或切換至「原生 Gemini」還原成原本的介面。"
+  },
+  "toast_native": {
+    "message": "使用原生"
+  },
+  "toast_ok": {
+    "message": "知道了"
+  },
+  "font_group_sans": {
+    "message": "黑體（無襯線）"
+  },
+  "font_group_serif": {
+    "message": "明體（襯線）"
+  },
+  "font_group_mono": {
+    "message": "手寫與等寬"
+  },
+  "font_custom_option": {
+    "message": "— 自訂字型名稱 —"
+  },
+  "custom": {
+    "message": "自訂"
+  },
+  "row_copymd": {
+    "message": "複製為 Markdown"
+  },
+  "row_copymd_desc": {
+    "message": "在操作列加一個按鈕，繞開 Gemini 內建的複製"
+  },
+  "copy_md": {
+    "message": "複製為 Markdown"
+  },
+  "copy_done": {
+    "message": "已複製"
+  },
+  "copy_failed": {
+    "message": "複製失敗"
+  }
+}

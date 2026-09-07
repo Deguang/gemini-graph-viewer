@@ -1,0 +1,204 @@
+{
+  "extName": {
+    "message": "Gemini Polish & Graph Viewer"
+  },
+  "extDesc": {
+    "message": "Google Gemini の読書体験をカスタマイズ：タイポグラフィ、配色、画面の簡素化、分割表示の Mermaid 図レンダラー。"
+  },
+  "preset_native": {
+    "message": "Gemini 標準"
+  },
+  "preset_comfort": {
+    "message": "読みやすさ"
+  },
+  "preset_focus": {
+    "message": "集中モード"
+  },
+  "scheme_native": {
+    "message": "Gemini 標準"
+  },
+  "scheme_sepia": {
+    "message": "セピア"
+  },
+  "scheme_amber": {
+    "message": "アンバー"
+  },
+  "slider_fontSize": {
+    "message": "文字サイズ"
+  },
+  "slider_lineHeight": {
+    "message": "行間"
+  },
+  "slider_paragraphSpacing": {
+    "message": "段落間隔"
+  },
+  "slider_maxWidth": {
+    "message": "表示幅"
+  },
+  "slider_navFontSize": {
+    "message": "サイドバー文字"
+  },
+  "slider_navSpacing": {
+    "message": "サイドバー間隔"
+  },
+  "section_reading": {
+    "message": "本文"
+  },
+  "section_interface": {
+    "message": "画面まわり"
+  },
+  "section_enhance": {
+    "message": "拡張機能"
+  },
+  "section_escape": {
+    "message": "上級者向け"
+  },
+  "row_font": {
+    "message": "フォント"
+  },
+  "row_justify": {
+    "message": "両端揃え"
+  },
+  "row_justify_desc": {
+    "message": "CJK の改行が整います"
+  },
+  "row_headings": {
+    "message": "見出しの階層"
+  },
+  "row_text": {
+    "message": "本文の文字色"
+  },
+  "row_link": {
+    "message": "リンク色"
+  },
+  "row_emphasis": {
+    "message": "アクセント色"
+  },
+  "row_emphasis_desc": {
+    "message": "太字と引用"
+  },
+  "row_code": {
+    "message": "コードの配色"
+  },
+  "row_code_desc": {
+    "message": "インラインコードとコードブロック"
+  },
+  "row_border": {
+    "message": "表と区切り線"
+  },
+  "row_bg": {
+    "message": "ページ背景"
+  },
+  "row_uiAccent": {
+    "message": "画面のアクセント色"
+  },
+  "row_uiAccent_desc": {
+    "message": "ボタン・現在の会話・入力バブル"
+  },
+  "row_disclaimer": {
+    "message": "免責文を隠す"
+  },
+  "row_fade": {
+    "message": "操作ボタンはホバー時のみ"
+  },
+  "row_fade_desc": {
+    "message": "高評価・共有・コピーなど"
+  },
+  "row_mermaid": {
+    "message": "Mermaid 図の描画"
+  },
+  "row_mermaid_desc": {
+    "message": "分割表示のプレビュー"
+  },
+  "label_preset": {
+    "message": "スタイル"
+  },
+  "label_scheme": {
+    "message": "配色"
+  },
+  "advanced": {
+    "message": "詳細設定"
+  },
+  "reset_btn": {
+    "message": "現在のスタイルに戻す"
+  },
+  "custom_css_hint": {
+    "message": "エンジンの規則には !important が付くため、カスタム CSS にも付けないと上書きできません。"
+  },
+  "font_custom_placeholder": {
+    "message": "例：'Noto Sans JP'"
+  },
+  "palette_light": {
+    "message": "ライトの配色"
+  },
+  "palette_dark": {
+    "message": "ダークの配色"
+  },
+  "palette_follows": {
+    "message": "Gemini に追従"
+  },
+  "inert_hint": {
+    "message": "「標準」配色ではこの項目は変更されません"
+  },
+  "save_failed": {
+    "message": "保存に失敗しました：$1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "sync_failed": {
+    "message": "この端末に保存しました（同期に失敗：$1）",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "css_too_big": {
+    "message": "保存しました · カスタム CSS が 8KB 超のため、この端末のみ"
+  },
+  "toast_title": {
+    "message": "Gemini Polish が有効になりました"
+  },
+  "toast_desc": {
+    "message": "読みやすいタイポグラフィを適用しました。ツールバーのアイコンから細かく調整できます。元の画面に戻すには「Gemini 標準」を選んでください。"
+  },
+  "toast_native": {
+    "message": "標準に戻す"
+  },
+  "toast_ok": {
+    "message": "了解"
+  },
+  "font_group_sans": {
+    "message": "ゴシック体"
+  },
+  "font_group_serif": {
+    "message": "明朝体"
+  },
+  "font_group_mono": {
+    "message": "手書き・等幅"
+  },
+  "font_custom_option": {
+    "message": "— フォント名を入力 —"
+  },
+  "custom": {
+    "message": "カスタム"
+  },
+  "row_copymd": {
+    "message": "Markdown でコピー"
+  },
+  "row_copymd_desc": {
+    "message": "Gemini 標準のコピーを迂回するボタンを追加"
+  },
+  "copy_md": {
+    "message": "Markdown でコピー"
+  },
+  "copy_done": {
+    "message": "コピーしました"
+  },
+  "copy_failed": {
+    "message": "コピーに失敗"
+  }
+}

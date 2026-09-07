@@ -6,124 +6,56 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <div class="header">
+  <header class="header">
     <img src="../icon.png" alt="Logo" class="logo">
     <div class="title">Gemini Polish</div>
-    <div class="version">v1.1.0</div>
-  </div>
+    <div class="version" id="version"></div>
+  </header>
 
-  <div class="container">
-    <div class="section-title">Core Features</div>
-    <div class="setting-item">
-      <div class="setting-info">
-        <div class="setting-name">Mermaid Graph Viewer</div>
-        <div class="setting-desc">Split-view rendering & auto-fit</div>
+  <main class="container">
+    <!-- Default view: pick a recipe, nudge the two or three values people
+         actually reach for. Everything else lives under Advanced. -->
+    <section class="card">
+      <!-- Both rows share the grid so their labels share one column, sized to
+           the widest — a fixed width fits 风格/配色 but clips "Couleurs". -->
+      <div class="pick-grid">
+        <div class="pick-row">
+          <label for="preset" data-i18n="label_preset">Style</label>
+          <select id="preset"></select>
+        </div>
+        <div class="pick-row">
+          <label for="colorScheme" data-i18n="label_scheme">Colours</label>
+          <select id="colorScheme"></select>
+        </div>
       </div>
-      <label class="switch">
-        <input type="checkbox" id="enableGraph" checked>
-        <span class="slider"></span>
-      </label>
-    </div>
+      <!-- Which palette is live is Gemini's call, not ours: the popup edits
+           whichever one the page is showing and says which that is. -->
+      <div class="palette-row">
+        <div class="palette-mode" id="paletteMode"></div>
+        <div class="palette-strip" id="paletteStrip" aria-hidden="true"></div>
+      </div>
 
-    <div class="section-title">UI & Typography (Beta)</div>
-    
-    <div class="setting-item">
-      <div class="setting-info">
-        <div class="setting-name">Minimal Mode</div>
-        <div class="setting-desc">Fade actions, hide disclaimers</div>
-      </div>
-      <label class="switch">
-        <input type="checkbox" id="enableMinimal">
-        <span class="slider"></span>
-      </label>
-    </div>
+      <div id="quickSliders"></div>
+      <div id="quickSwitches"></div>
+    </section>
 
-    <div class="setting-item">
-      <div class="setting-info">
-        <div class="setting-name">Custom Typography</div>
-        <div class="setting-desc">Enhance reading experience</div>
-      </div>
-      <label class="switch">
-        <input type="checkbox" id="enableTypography">
-        <span class="slider"></span>
-      </label>
-    </div>
+    <details class="card group" id="advancedGroup">
+      <summary data-i18n="advanced">Advanced</summary>
+      <div class="group-body">
+        <div id="advanced"></div>
 
-    <div id="typography-controls" class="sub-controls disabled">
-      <div class="control-group">
-        <label style="margin-bottom: 4px;">Font Family</label>
-        <select id="fontFamily" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; margin-bottom: 8px;">
-          <optgroup label="Sans-serif (无衬线 - 现代清晰)">
-            <option value="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">System Default (系统默认)</option>
-            <option value="'PingFang SC', 'San Francisco', sans-serif">Apple PingFang (苹方)</option>
-            <option value="'Microsoft YaHei', 'SimHei', sans-serif">Microsoft YaHei (微软雅黑)</option>
-            <option value="'HarmonyOS Sans SC', 'HarmonyOS Sans', sans-serif">HarmonyOS Sans (鸿蒙)</option>
-            <option value="'OPPOSans', 'OPPO Sans', sans-serif">OPPO Sans (OPPO 简黑)</option>
-            <option value="'MiSans', sans-serif">MiSans (小米无衬线)</option>
-            <option value="'Inter', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif">Modern Sans (Inter/Helvetica)</option>
-          </optgroup>
-          <optgroup label="Serif (衬线体 - 传统优雅)">
-            <option value="'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', serif">Source Han Serif (思源宋体)</option>
-            <option value="'Georgia', 'Palatino', 'Songti SC', serif">Georgia & Songti (乔治亚与宋体)</option>
-            <option value="'Garamond', 'Times New Roman', 'Songti SC', serif">Garamond (加拉蒙)</option>
-          </optgroup>
-          <optgroup label="Calligraphy & Mono (书法与等宽)">
-            <option value="'LXGW WenKai', 'Kaiti SC', 'STKaiti', serif">LXGW WenKai (霞鹜文楷)</option>
-            <option value="'FangSong', 'STFangsong', serif">FangSong (仿宋)</option>
-            <option value="'JetBrains Mono', 'Fira Code', 'Consolas', monospace">Developer (JetBrains/Fira)</option>
-          </optgroup>
-          <optgroup label="Custom (自定义)">
-            <option value="custom">-- Custom Font (输入字体名) --</option>
-          </optgroup>
-        </select>
-        <input type="text" id="customFontName" placeholder="e.g., 'Alibaba PuHuiTi'" style="display: none; width: 100%; box-sizing: border-box; padding: 4px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; margin-bottom: 8px;">
+        <div class="section-hint" data-i18n="section_escape">Escape hatch</div>
+        <textarea id="customCSS" placeholder="/* .your-rule { color: red !important; } */" spellcheck="false"></textarea>
+        <div class="hint" data-i18n="custom_css_hint">Engine rules carry !important, so custom CSS needs it too in order to win.</div>
+        <button id="resetPreset" class="reset-btn" data-i18n="reset_btn">Reset to current style</button>
       </div>
-      <div class="control-group">
-        <label>Line Height: <span id="lineHeightVal">1.7</span></label>
-        <input type="range" id="lineHeight" min="1.0" max="3.0" step="0.1" value="1.7">
-      </div>
-      <div class="control-group">
-        <label>Paragraph Spacing: <span id="paragraphSpacingVal">1.2</span>em</label>
-        <input type="range" id="paragraphSpacing" min="0.0" max="4.0" step="0.1" value="1.2">
-      </div>
-      <div class="control-group">
-        <label>Base Font Size: <span id="fontSizeVal">16</span>px</label>
-        <input type="range" id="fontSize" min="10" max="30" step="1" value="16">
-      </div>
-      <div class="control-group">
-        <label>Content Max Width: <span id="maxWidthVal">850</span>px</label>
-        <input type="range" id="maxWidth" min="400" max="1800" step="50" value="850">
-      </div>
-      <hr style="border: 0; border-top: 1px solid #e0e0e0; margin: 12px 0;">
-      <div class="control-group">
-        <label>Nav Font Size: <span id="navFontSizeVal">13</span>px</label>
-        <input type="range" id="navFontSize" min="10" max="24" step="1" value="13">
-      </div>
-      <div class="control-group">
-        <label>Nav Spacing: <span id="navSpacingVal">8</span>px</label>
-        <input type="range" id="navSpacing" min="0" max="30" step="1" value="8">
-      </div>
-    </div>
+    </details>
 
-    <div class="section-title">Themes & Colors</div>
-    <div class="setting-item">
-      <div class="setting-info">
-        <div class="setting-name">Accent Color</div>
-        <div class="setting-desc">Override Gemini's default colors</div>
-      </div>
-      <input type="color" id="accentColor" value="#1a73e8" style="cursor: pointer; border: none; padding: 0; background: transparent; width: 32px; height: 32px; border-radius: 4px;">
-    </div>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+  </main>
 
-    <div class="section-title">Advanced</div>
-    <div class="setting-item">
-      <div class="setting-info" style="width: 100%;">
-        <div class="setting-name">Custom CSS</div>
-        <div class="setting-desc">Inject your own CSS to override styles</div>
-        <textarea id="customCSS" placeholder="/* E.g., .gemini-button { display: none !important; } */" spellcheck="false"></textarea>
-      </div>
-    </div>
-  </div>
-
+  <script src="../shared/config.js"></script>
+  <script src="../shared/css-engine.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

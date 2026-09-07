@@ -1,0 +1,29 @@
+graph LR
+    subgraph Local_Workspace ["📦 本地开发环境 (Node.js)"]
+        direction TB
+
+        subgraph Files ["源码与配置"]
+            Manifest["manifest.json"]
+            Config["tug.yml (Scheme)"]
+            Assets["图片物料目录"]
+        end
+
+        subgraph Tug_CLI ["🛠️ tug-cli (本地核心)"]
+            Parser["解析与合并引擎 (Zod)"]
+            Server["本地通信服务 (HTTP:4321)"]
+        end
+
+        Manifest --> Parser
+        Parser -. 输出合并 JSON .-> Server
+    end
+
+    subgraph External ["☁️ 外部服务"]
+        LLM_API["大模型 API (如 Gemini)"]
+    end
+
+    AI_Module <-->|"提炼代码上下文"| LLM_API
+
+    Server =="1. API 请求拉取数据 (CORS)"==> Injector
+
+    classDef local fill:#f0f8ff,stroke:#0066cc,stroke-width:1px;
+    class Local_Workspace local;

@@ -1,0 +1,225 @@
+version: "1.0"
+source:
+  repository: https://github.com/Deguang/gemini-graph-viewer
+  changelog_locale: en
+  release_tag: v1.1.17
+global:
+  category: productivity
+  support_email: better_li@live.com
+  privacy_policy_url: https://app.lideguang.com/gemini-graph-viewer/privacy.html
+  home_page_url: https://app.lideguang.com/gemini-graph-viewer/
+privacy:
+  permissions:
+    scripting: 把本扩展的样式引擎、Mermaid 渲染器与复制动作注入 Gemini 页面；并在安装或更新时激活已经打开的 Gemini 标签页，使用户无需手动刷新。
+    tabs: 仅用于定位已打开的 Gemini 标签页，把设置改动即时推送过去实现实时预览。不读取浏览历史，不访问 Gemini 以外的任何标签页。
+    storage: 在本地保存外观设置（排版数值、明暗两套调色板、功能开关、自定义 CSS），并镜像到你的 Google 账号以便跨设备同步。不存储任何对话内容。
+  host_permissions:
+    "*://gemini.google.com/*": 本扩展仅在 Google Gemini 上运行，不读取或修改任何其他网站。
+  data_usage:
+    single_purpose: true
+    sell_data: false
+assets:
+  icon_128: ./icon-128.png
+  screenshots:
+    - ./preview/store/01-reading.png
+    - ./preview/store/02-schemes.png
+    - ./preview/store/03-settings.png
+    - ./preview/store/04-mermaid.png
+  promo_small: ./preview/promo-cover-440x280.png
+  promo_large: ./preview/promo-cover-1400x560.png
+locales:
+  en:
+    name: Gemini Polish & Graph Viewer
+    short_description: "Customizable reading experience for Google Gemini: typography, colour schemes and a split-view Mermaid renderer."
+    description: |
+      Gemini Polish turns Google Gemini into a reading surface you actually want to spend time in - and keeps the diagram viewer you already know.
+
+      STYLE AND COLOUR ARE TWO CONTROLS THAT DO NOT OVERLAP
+      Style decides how much of Gemini's layout gets replaced: Native Gemini (changes nothing), Comfortable (17px, 1.7 line height, real paragraph spacing, a readable 860px column), Focus (18px/1.9/700px, disclaimer hidden, action buttons revealed on hover). Colour decides what it looks like - six schemes, each shipping a matched light and dark palette of eight colours: Native Gemini (a true pass-through that emits no colour rules at all, so Google's own palette shows through), Solarized, Nord, Gruvbox, Amber (the only scheme that keeps Gemini's white ground and warms just the accent), and Sepia.
+
+      SPLIT-VIEW MERMAID RENDERER
+      Flowcharts, sequence diagrams, mindmaps, ER, class and state diagrams and Gantt charts render next to their source. Pan, zoom, auto-fit, side-by-side or stacked, fullscreen, export SVG, or copy as a 2x PNG.
+
+      A COPY BUTTON THAT DOES NOT HANG THE TAB
+      Gemini's own copy can lock the page on long answers. This adds an MD button beside it that serialises the answer itself - headings, nested lists, blockquotes, tables and fenced code blocks with their language label - in a single pass.
+
+      WHEN YOU WANT THE KNOBS
+      Advanced opens 21 individual switches grouped by what they act on, six sliders, and a Custom CSS box.
+
+      DETAILS THAT TOOK THE WORK
+      Every palette we author clears WCAG AA contrast for text, links and inline code - against the surface colour, not just the background. Settings are written locally first and mirrored to your Google account, so a throttled or offline sync never costs you a change. Changes apply as you make them, with no reload. Available in 7 languages.
+
+      PRIVACY
+      No analytics, no tracking, no remote code, no network requests of its own. Runs only on gemini.google.com.
+
+      Gemini Polish is an independent project. It is not affiliated with, endorsed by, or sponsored by Google.
+    changelog: |
+      1.3.0
+      - Reading styles rebuilt: Native Gemini / Comfortable / Focus, each with its own typography values
+      - Six colour schemes with matched light and dark palettes, including the new Amber
+      - "Native Gemini" colours are now a true pass-through - no colour rules are emitted at all
+      - New: Copy as Markdown, an alternative to Gemini's own copy on long answers
+      - Settings panel rebuilt, with a dark mode of its own
+      - Interface available in 7 languages
+      - Fixed: valid Mermaid diagrams with quoted subgraph titles no longer fail to parse
+      - Performance: removed a per-second scan that forced layout, and listeners that accumulated per diagram
+  zh_CN:
+    name: Gemini Polish & Graph Viewer
+    short_description: 为 Google Gemini 定制阅读体验：排版、配色方案、界面精简，以及分栏式 Mermaid 图表渲染器。
+    description: |
+      Gemini Polish 把 Google Gemini 变成一个你愿意长时间停留的阅读界面，同时保留你已经熟悉的图表查看器。
+
+      风格与配色是两个互不重叠的控件
+      风格决定替换掉多少 Gemini 的排版：原生 Gemini（什么都不改）、舒适阅读（17px、1.7 行高、真正的段间距、860px 可读行宽）、沉浸（18px/1.9/700px，隐藏免责声明，操作按钮悬停才显示）。配色决定它长什么样，共六套，每套都带明暗成对的八色调色板：原生 Gemini（真正的直通，一条颜色规则都不发，Google 自己的配色原样透出）、Solarized、Nord、Gruvbox、Amber（唯一保留 Gemini 白底、只把强调色调暖的方案）、Sepia。哪套色板生效由 Gemini 自己的明暗切换决定。
+
+      分栏式 Mermaid 渲染
+      流程图、时序图、思维导图、ER 图、类图、状态图、甘特图等都会在源码旁边渲染出来。可平移、缩放、自动适配，左右或上下布局切换，全屏，导出 SVG，或把图表复制为 2 倍图 PNG。
+
+      一个不会卡死页面的复制按钮
+      Gemini 自带的「复制回复」在长回答上会锁死页面。这里在它旁边加了一个 MD 按钮，自己把回答序列化成 Markdown —— 标题、嵌套列表、引用块、表格、带语言标签的代码围栏 —— 一遍走完。
+
+      需要细调的时候
+      高级里有 21 个独立开关（按作用对象分组）、六个滑块，以及一个自定义 CSS 输入框。
+
+      一些花了功夫的细节
+      我们自己配的每套调色板，正文、链接和行内代码都通过 WCAG AA 对比度 —— 而且是对着 surface 色验的，不只是背景色。设置先写本地再后台同步到你的 Google 账号，所以同步被限流或断网都不会让你丢改动。改动即时生效，不用刷新。支持 7 种语言。
+
+      隐私
+      无统计、无追踪、无远程代码、自身不发任何网络请求，只在 gemini.google.com 上运行。
+
+      Gemini Polish 为独立开发项目，与 Google 无关联，未获其背书或赞助。
+    changelog: |
+      1.3.0
+      - 阅读风格重做：原生 Gemini / 舒适阅读 / 沉浸，每个风格带自己的排版数值
+      - 六套配色方案，明暗成对，新增 Amber
+      - 「原生 Gemini」配色改为真正的直通，不再发出任何颜色规则
+      - 新增：复制为 Markdown，长回答下 Gemini 自带复制的替代方案
+      - 设置面板重做，自带深色模式
+      - 界面支持 7 种语言
+      - 修复：带引号子图标题的合法 Mermaid 图不再解析失败
+      - 性能：移除每秒一次的强制布局扫描，以及每个图表累积的监听器
+  zh_TW:
+    name: Gemini Polish & Graph Viewer
+    short_description: 為 Google Gemini 打造可自訂的閱讀體驗：排版、配色方案、介面簡化，以及分欄式 Mermaid 圖表算繪器。
+    description: |
+      Gemini Polish 把 Google Gemini 變成一個你願意長時間停留的閱讀介面，同時保留你已經熟悉的圖表檢視器。
+
+      風格與配色是兩個互不重疊的控制項
+      風格決定替換掉多少 Gemini 的排版：原生 Gemini（什麼都不改）、舒適閱讀（17px、1.7 行高、真正的段落間距、860px 可讀行寬）、沉浸（18px/1.9/700px，隱藏免責聲明，操作按鈕停留才顯示）。配色決定它長什麼樣，共六套，每套都帶明暗成對的八色調色板：原生 Gemini（真正的直通，一條顏色規則都不發）、Solarized、Nord、Gruvbox、Amber（唯一保留白底、只把強調色調暖）、Sepia。
+
+      分欄式 Mermaid 算繪
+      流程圖、時序圖、心智圖、ER 圖、類別圖、狀態圖、甘特圖都會在原始碼旁邊算繪出來，可平移縮放、切換版面、全螢幕、匯出 SVG 或複製為 2 倍圖 PNG。
+
+      複製為 Markdown
+      Gemini 內建的「複製回覆」在長回答上會鎖死頁面。這裡加了一個 MD 按鈕，自己把回答序列化成 Markdown，一遍走完。
+
+      進階裡有 21 個獨立開關、六個滑桿與自訂 CSS。我們自己配的每套調色板都通過 WCAG AA 對比度。設定先寫本機再同步到你的 Google 帳號，同步失敗不會讓你丟改動。支援 7 種語言。
+
+      無統計、無追蹤、無遠端程式碼，只在 gemini.google.com 上執行。本擴充功能為獨立開發，與 Google 無關聯。
+    changelog: |
+      1.3.0
+      - 閱讀風格重做，六套配色（新增 Amber），「原生」改為真正直通
+      - 新增：複製為 Markdown
+      - 設定面板重做，自帶深色模式；介面支援 7 種語言
+      - 修復帶引號子圖標題的 Mermaid 解析失敗
+      - 效能：移除每秒強制版面計算的掃描與累積的事件監聽器
+  ja:
+    name: Gemini Polish & Graph Viewer
+    short_description: Google Gemini の読書体験をカスタマイズ：タイポグラフィ、配色、画面の簡素化、分割表示の Mermaid 図レンダラー。
+    description: |
+      Gemini Polish は Google Gemini を「長く読んでいられる画面」に変えます。これまでの図表ビューアもそのまま使えます。
+
+      スタイルと配色は重ならない二つの設定
+      スタイルは Gemini のレイアウトをどこまで置き換えるかを決めます：Gemini 標準（何も変更しない）、読みやすさ（17px・行間 1.7・段落間隔・860px の読みやすい行長）、集中モード（18px/1.9/700px、免責文を隠し、操作ボタンはホバー時のみ表示）。配色は見た目を決めます。全 6 種で、それぞれにライトとダークの 8 色パレットが対で入っています：Gemini 標準（本当の意味での「何もしない」— 配色ルールを一切出しません）、Solarized、Nord、Gruvbox、アンバー（白地を保ったままアクセントだけ暖色にする唯一の配色）、セピア。
+
+      分割表示の Mermaid レンダラー
+      フローチャート、シーケンス図、マインドマップ、ER 図、クラス図、状態遷移図、ガントチャートをソースの隣に描画します。パン・ズーム・自動フィット、全画面、SVG 書き出し、2 倍解像度 PNG のコピーに対応。
+
+      Markdown でコピー
+      Gemini 標準の「回答をコピー」は長い回答でページを固まらせることがあります。その隣に MD ボタンを追加し、見出し・入れ子リスト・引用・表・言語ラベル付きコードブロックを一度の走査で Markdown 化します。
+
+      詳細設定には 21 個のスイッチ、6 個のスライダー、カスタム CSS 欄があります。自作の配色はすべて WCAG AA のコントラスト基準を満たしています。設定はまずローカルに保存してから Google アカウントへ同期するため、同期の失敗で変更が失われることはありません。7 言語対応。
+
+      計測なし、追跡なし、リモートコードなし。gemini.google.com でのみ動作します。本拡張機能は独立したプロジェクトであり、Google とは関係ありません。
+    changelog: |
+      1.3.0
+      - 読書スタイルを刷新、配色 6 種（アンバー追加）、「Gemini 標準」は完全な非干渉に
+      - 新機能：Markdown でコピー
+      - 設定画面を刷新しダークモード対応、7 言語に対応
+      - 引用符付きサブグラフ名の Mermaid 解析エラーを修正
+      - 性能：毎秒のレイアウト強制走査と蓄積するリスナーを除去
+  hi:
+    name: Gemini Polish & Graph Viewer
+    short_description: "Google Gemini के लिए पठन अनुभव अनुकूलित करें: टाइपोग्राफ़ी, रंग योजनाएँ, इंटरफ़ेस सरलीकरण, और विभाजित-दृश्य Mermaid आरेख रेंडरर।"
+    description: |
+      Gemini Polish, Google Gemini को एक ऐसा पठन-अनुभव बनाता है जिसमें समय बिताना अच्छा लगे - और आपका परिचित आरेख व्यूअर भी बना रहता है।
+
+      शैली और रंग दो अलग नियंत्रण हैं
+      शैली तय करती है कि Gemini का लेआउट कितना बदले: मूल Gemini (कुछ नहीं बदलता), आरामदायक (17px, 1.7 पंक्ति-ऊँचाई, वास्तविक अनुच्छेद अंतर, 860px पठनीय चौड़ाई), फ़ोकस (18px/1.9/700px, अस्वीकरण छिपा, क्रियाएँ होवर पर)। रंग तय करता है कि वह कैसा दिखे - छह योजनाएँ, हर एक में हल्के और गहरे के जोड़े में आठ रंग: मूल Gemini (सच्चा पास-थ्रू, कोई रंग नियम नहीं भेजता), Solarized, Nord, Gruvbox, एम्बर (एकमात्र योजना जो सफ़ेद पृष्ठभूमि रखती है), सेपिया।
+
+      विभाजित-दृश्य Mermaid रेंडरर
+      फ़्लोचार्ट, अनुक्रम आरेख, माइंड मैप, ER आरेख, क्लास आरेख, स्टेट आरेख और गैंट चार्ट स्रोत के बगल में रेंडर होते हैं - पैन, ज़ूम, ऑटो-फ़िट, पूर्ण स्क्रीन, SVG निर्यात, या 2x PNG कॉपी।
+
+      Markdown में कॉपी
+      लंबे उत्तरों पर Gemini की अपनी कॉपी पेज को रोक सकती है। उसके बगल में एक MD बटन जुड़ता है जो उत्तर को स्वयं Markdown में बदलता है।
+
+      उन्नत में 21 स्विच, छह स्लाइडर और कस्टम CSS है। हमारी अपनी बनाई हर रंग-योजना WCAG AA कंट्रास्ट पास करती है। सेटिंग्स पहले स्थानीय रूप से सहेजी जाती हैं, फिर आपके Google खाते में सिंक होती हैं। 7 भाषाओं में उपलब्ध।
+
+      कोई ट्रैकिंग नहीं, कोई रिमोट कोड नहीं। केवल gemini.google.com पर चलता है। यह एक स्वतंत्र परियोजना है, Google से संबद्ध नहीं।
+    changelog: |
+      1.3.0
+      - पठन शैलियाँ नई, छह रंग-योजनाएँ (एम्बर नया), "मूल" अब सच्चा पास-थ्रू
+      - नया: Markdown में कॉपी
+      - सेटिंग्स पैनल नया, डार्क मोड सहित; 7 भाषाएँ
+      - उद्धृत सबग्राफ़ शीर्षक वाले Mermaid आरेख की पार्स त्रुटि ठीक
+      - प्रदर्शन: प्रति-सेकंड लेआउट स्कैन और संचित लिसनर हटाए गए
+  de:
+    name: Gemini Polish & Graph Viewer
+    short_description: "Anpassbares Leseerlebnis für Google Gemini: Typografie, Farbschemata und ein Mermaid-Renderer mit geteilter Ansicht."
+    description: |
+      Gemini Polish macht aus Google Gemini eine Leseoberflaeche, in der man sich gern aufhaelt - und behaelt den vertrauten Diagramm-Viewer.
+
+      STIL UND FARBEN UEBERSCHNEIDEN SICH NICHT
+      Der Stil bestimmt, wie viel von Geminis Layout ersetzt wird: Gemini-Original (veraendert nichts), Komfortabel (17px, Zeilenhoehe 1,7, echte Absatzabstaende, lesbare 860px-Spalte), Fokus (18px/1,9/700px, Hinweis ausgeblendet, Aktionen erst bei Hover). Die Farben bestimmen das Aussehen - sechs Schemata, jedes mit einer abgestimmten hellen und dunklen Palette aus acht Farben: Gemini-Original (echtes Durchreichen, es werden gar keine Farbregeln erzeugt), Solarized, Nord, Gruvbox, Amber (das einzige Schema, das Geminis weissen Grund behaelt) und Sepia.
+
+      MERMAID-RENDERER MIT GETEILTER ANSICHT
+      Fluss-, Sequenz-, Klassen-, Zustands- und ER-Diagramme, Mindmaps und Gantt-Charts werden neben ihrem Quelltext gerendert - verschieben, zoomen, einpassen, Vollbild, SVG-Export oder als 2x-PNG kopieren.
+
+      ALS MARKDOWN KOPIEREN
+      Geminis eigenes Kopieren kann die Seite bei langen Antworten blockieren. Daneben erscheint eine MD-Schaltflaeche, die die Antwort selbst in Markdown umwandelt.
+
+      Unter Erweitert liegen 21 Schalter, sechs Regler und ein Feld fuer eigenes CSS. Jede von uns entworfene Palette erfuellt den WCAG-AA-Kontrast. Einstellungen werden zuerst lokal gespeichert und dann mit Ihrem Google-Konto synchronisiert. In 7 Sprachen verfuegbar.
+
+      Keine Analyse, kein Tracking, kein Remote-Code. Laeuft ausschliesslich auf gemini.google.com. Ein unabhaengiges Projekt, nicht mit Google verbunden.
+    changelog: |
+      1.3.0
+      - Lesestile neu, sechs Farbschemata (Amber neu), Original reicht Farben jetzt wirklich durch
+      - Neu: Als Markdown kopieren
+      - Einstellungen neu gebaut, mit eigenem Dunkelmodus; 7 Sprachen
+      - Behoben: Mermaid-Diagramme mit zitierten Subgraph-Titeln
+      - Performance: sekuendlicher Layout-Scan und angesammelte Listener entfernt
+  fr:
+    name: Gemini Polish & Graph Viewer
+    short_description: "Lecture personnalisable pour Google Gemini : typographie, palettes et rendu de diagrammes Mermaid en vue partagée."
+    description: |
+      Gemini Polish transforme Google Gemini en une surface de lecture ou l'on reste volontiers - tout en conservant la visionneuse de diagrammes que vous connaissez.
+
+      STYLE ET COULEURS NE SE CHEVAUCHENT PAS
+      Le style decide de la part de la mise en page remplacee : Gemini d'origine (ne change rien), Confortable (17px, interligne 1,7, vrais espaces entre paragraphes, colonne lisible de 860px), Focus (18px/1,9/700px, avertissement masque, actions au survol). Les couleurs decident de l'apparence - six palettes, chacune livree en version claire et sombre assorties de huit teintes : Gemini d'origine (veritable passe-plat, aucune regle de couleur n'est emise), Solarized, Nord, Gruvbox, Ambre (la seule qui conserve le fond blanc de Gemini) et Sepia.
+
+      RENDU MERMAID EN VUE PARTAGEE
+      Organigrammes, diagrammes de sequence, cartes mentales, diagrammes ER, de classes, d'etats et de Gantt s'affichent a cote de leur source - deplacement, zoom, ajustement, plein ecran, export SVG ou copie en PNG 2x.
+
+      COPIER EN MARKDOWN
+      La copie native de Gemini peut bloquer la page sur les reponses longues. Un bouton MD apparait a cote et convertit la reponse lui-meme en Markdown.
+
+      Avance ouvre 21 interrupteurs, six curseurs et un champ CSS personnalise. Chaque palette que nous concevons respecte le contraste WCAG AA. Les reglages sont ecrits en local puis synchronises avec votre compte Google. Disponible en 7 langues.
+
+      Aucune analyse, aucun suivi, aucun code distant. Fonctionne uniquement sur gemini.google.com. Projet independant, sans lien avec Google.
+    changelog: |
+      1.3.0
+      - Styles de lecture refaits, six palettes (Ambre nouvelle), d'origine ne touche plus rien
+      - Nouveau : copier en Markdown
+      - Panneau de reglages refait, avec mode sombre ; 7 langues
+      - Corrige : diagrammes Mermaid aux titres de sous-graphe entre guillemets
+      - Performances : suppression du scan par seconde et des ecouteurs accumules

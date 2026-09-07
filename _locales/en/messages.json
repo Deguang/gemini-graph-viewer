@@ -1,0 +1,204 @@
+{
+  "extName": {
+    "message": "Gemini Polish & Graph Viewer"
+  },
+  "extDesc": {
+    "message": "Customizable reading experience for Google Gemini: typography, colour schemes and a split-view Mermaid renderer."
+  },
+  "preset_native": {
+    "message": "Native Gemini"
+  },
+  "preset_comfort": {
+    "message": "Comfortable"
+  },
+  "preset_focus": {
+    "message": "Focus"
+  },
+  "scheme_native": {
+    "message": "Native Gemini"
+  },
+  "scheme_sepia": {
+    "message": "Sepia"
+  },
+  "scheme_amber": {
+    "message": "Amber"
+  },
+  "slider_fontSize": {
+    "message": "Size"
+  },
+  "slider_lineHeight": {
+    "message": "Line height"
+  },
+  "slider_paragraphSpacing": {
+    "message": "Paragraph gap"
+  },
+  "slider_maxWidth": {
+    "message": "Width"
+  },
+  "slider_navFontSize": {
+    "message": "Sidebar size"
+  },
+  "slider_navSpacing": {
+    "message": "Sidebar spacing"
+  },
+  "section_reading": {
+    "message": "Reading (content)"
+  },
+  "section_interface": {
+    "message": "Interface (chrome)"
+  },
+  "section_enhance": {
+    "message": "Enhancements"
+  },
+  "section_escape": {
+    "message": "Escape hatch"
+  },
+  "row_font": {
+    "message": "Font"
+  },
+  "row_justify": {
+    "message": "Justify"
+  },
+  "row_justify_desc": {
+    "message": "Tidier CJK line breaks"
+  },
+  "row_headings": {
+    "message": "Heading scale"
+  },
+  "row_text": {
+    "message": "Body text colour"
+  },
+  "row_link": {
+    "message": "Link colour"
+  },
+  "row_emphasis": {
+    "message": "Accent"
+  },
+  "row_emphasis_desc": {
+    "message": "Bold and blockquotes"
+  },
+  "row_code": {
+    "message": "Code colours"
+  },
+  "row_code_desc": {
+    "message": "Inline code and code blocks"
+  },
+  "row_border": {
+    "message": "Tables & rules"
+  },
+  "row_bg": {
+    "message": "Page background"
+  },
+  "row_uiAccent": {
+    "message": "Interface accent"
+  },
+  "row_uiAccent_desc": {
+    "message": "Buttons, current chat, query bubble"
+  },
+  "row_disclaimer": {
+    "message": "Hide disclaimer"
+  },
+  "row_fade": {
+    "message": "Reveal actions on hover"
+  },
+  "row_fade_desc": {
+    "message": "Like, share, copy…"
+  },
+  "row_mermaid": {
+    "message": "Mermaid diagrams"
+  },
+  "row_mermaid_desc": {
+    "message": "Split-view diagram viewer"
+  },
+  "label_preset": {
+    "message": "Style"
+  },
+  "label_scheme": {
+    "message": "Colours"
+  },
+  "advanced": {
+    "message": "Advanced"
+  },
+  "reset_btn": {
+    "message": "Reset to current style"
+  },
+  "custom_css_hint": {
+    "message": "Engine rules carry !important, so custom CSS needs it too in order to win."
+  },
+  "font_custom_placeholder": {
+    "message": "e.g. 'Alibaba PuHuiTi'"
+  },
+  "palette_light": {
+    "message": "Light palette"
+  },
+  "palette_dark": {
+    "message": "Dark palette"
+  },
+  "palette_follows": {
+    "message": "follows Gemini"
+  },
+  "inert_hint": {
+    "message": "“Native” colours leave this to Gemini"
+  },
+  "save_failed": {
+    "message": "Save failed: $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "sync_failed": {
+    "message": "Saved on this device (cloud sync failed: $1)",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "css_too_big": {
+    "message": "Saved · Custom CSS over 8KB, this device only"
+  },
+  "toast_title": {
+    "message": "Gemini Polish is active"
+  },
+  "toast_desc": {
+    "message": "Comfortable reading typography is on. Open the toolbar icon to adjust anything, or switch to Native Gemini to restore the original interface."
+  },
+  "toast_native": {
+    "message": "Use native"
+  },
+  "toast_ok": {
+    "message": "Got it"
+  },
+  "font_group_sans": {
+    "message": "Sans-serif"
+  },
+  "font_group_serif": {
+    "message": "Serif"
+  },
+  "font_group_mono": {
+    "message": "Calligraphy & Mono"
+  },
+  "font_custom_option": {
+    "message": "— Custom font name —"
+  },
+  "custom": {
+    "message": "Custom"
+  },
+  "row_copymd": {
+    "message": "Copy as Markdown"
+  },
+  "row_copymd_desc": {
+    "message": "Adds a button that bypasses Gemini's own copy"
+  },
+  "copy_md": {
+    "message": "Copy as Markdown"
+  },
+  "copy_done": {
+    "message": "Copied"
+  },
+  "copy_failed": {
+    "message": "Copy failed"
+  }
+}

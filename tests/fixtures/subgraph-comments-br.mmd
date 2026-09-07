@@ -1,0 +1,33 @@
+graph TD
+    %% 定义外部服务
+    subgraph External ["外部服务 (External Services)"]
+        LLM_API["LLM API<br/>(生成合规权限理由)"]
+    end
+
+    subgraph Local ["本地开发环境 (Node.js CLI)"]
+        subgraph Data_Sources ["数据源 (Data Sources)"]
+            YML["tug.yml<br/>(基础信息/多语言/路径)"]
+            MANIFEST["manifest.json<br/>(权限声明: permissions/host)"]
+        end
+
+        subgraph CLI ["tug-cli 核心模块"]
+            PARSER["Parser 模块<br/>(解析合并配置并做 Diff 校验)"]
+            SERVER["Local Server<br/>(提供 127.0.0.1:4321 数据接口)"]
+        end
+
+        YML --> PARSER
+        %% 只有遇到未填写的权限说明时，才会调用大模型
+        PARSER <-->|未解释权限| LLM_API
+        PARSER --> SERVER
+    end
+
+    subgraph Browser ["开发者浏览器环境 (Browser)"]
+        UI["浮动操作面板<br/>(Tug in 按钮)"]
+        FETCHER["Data Fetcher<br/>(请求本地数据)"]
+        UI -->|点击填充| FETCHER
+    end
+
+    SERVER -.->|CORS / Fetch (JSON Payload)| FETCHER
+
+    classDef highlight fill:#f9f,stroke:#333,stroke-width:2px;
+    class SERVER,FETCHER highlight;

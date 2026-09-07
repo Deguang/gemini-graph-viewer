@@ -1,0 +1,48 @@
+/* ============================================================
+   Our own controls inside Gemini's action bar.
+   Styled to sit alongside Gemini's buttons rather than compete
+   with them, and driven by currentColor so it follows whatever
+   the surrounding theme (and our colour scheme) resolves to.
+   ============================================================ */
+
+.gp-copy-md {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  /* Matches the 32px square buttons Gemini puts in the same flex row; anything
+     taller stretches the row and breaks the shared baseline. */
+  height: 32px;
+  align-self: center;
+  padding: 0 10px;
+  margin-right: 2px;   /* it leads the row, so the gap goes after it */
+  border: none;
+  border-radius: 16px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: background-color 0.15s, opacity 0.15s, color 0.15s;
+}
+.gp-copy-md:hover {
+  opacity: 1;
+  background-color: color-mix(in srgb, currentColor 12%, transparent);
+}
+.gp-copy-md:active { background-color: color-mix(in srgb, currentColor 20%, transparent); }
+.gp-copy-md:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+
+.gp-copy-md svg { flex-shrink: 0; }
+.gp-copy-md-text { font-variant-numeric: tabular-nums; }
+
+/* Feedback states. Green/red are stated outright rather than themed: this is a
+   transient success/failure signal, and it has to stay legible under every
+   colour scheme, including the ones that recolour everything else. */
+.gp-copy-md.is-done   { color: #1b7f3b; opacity: 1; }
+.gp-copy-md.is-failed { color: #c0392b; opacity: 1; }
+@media (prefers-color-scheme: dark) {
+  .gp-copy-md.is-done   { color: #6fcf8b; }
+  .gp-copy-md.is-failed { color: #ef8a80; }
+}

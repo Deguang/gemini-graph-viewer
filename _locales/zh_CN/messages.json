@@ -1,0 +1,204 @@
+{
+  "extName": {
+    "message": "Gemini Polish & Graph Viewer"
+  },
+  "extDesc": {
+    "message": "为 Google Gemini 定制阅读体验：排版、配色方案、界面精简，以及分栏式 Mermaid 图表渲染器。"
+  },
+  "preset_native": {
+    "message": "原生 Gemini"
+  },
+  "preset_comfort": {
+    "message": "舒适阅读"
+  },
+  "preset_focus": {
+    "message": "沉浸"
+  },
+  "scheme_native": {
+    "message": "原生 Gemini"
+  },
+  "scheme_sepia": {
+    "message": "Sepia（护眼）"
+  },
+  "scheme_amber": {
+    "message": "Amber（琥珀）"
+  },
+  "slider_fontSize": {
+    "message": "字号"
+  },
+  "slider_lineHeight": {
+    "message": "行高"
+  },
+  "slider_paragraphSpacing": {
+    "message": "段间距"
+  },
+  "slider_maxWidth": {
+    "message": "宽度"
+  },
+  "slider_navFontSize": {
+    "message": "侧栏字号"
+  },
+  "slider_navSpacing": {
+    "message": "侧栏间距"
+  },
+  "section_reading": {
+    "message": "阅读（正文）"
+  },
+  "section_interface": {
+    "message": "界面（外壳）"
+  },
+  "section_enhance": {
+    "message": "增强"
+  },
+  "section_escape": {
+    "message": "逃生舱"
+  },
+  "row_font": {
+    "message": "字体"
+  },
+  "row_justify": {
+    "message": "两端对齐"
+  },
+  "row_justify_desc": {
+    "message": "CJK 断行更整齐"
+  },
+  "row_headings": {
+    "message": "标题分级"
+  },
+  "row_text": {
+    "message": "正文文字色"
+  },
+  "row_link": {
+    "message": "链接色"
+  },
+  "row_emphasis": {
+    "message": "强调色"
+  },
+  "row_emphasis_desc": {
+    "message": "粗体与引用块"
+  },
+  "row_code": {
+    "message": "代码配色"
+  },
+  "row_code_desc": {
+    "message": "行内代码与代码块"
+  },
+  "row_border": {
+    "message": "表格分隔线"
+  },
+  "row_bg": {
+    "message": "页面背景"
+  },
+  "row_uiAccent": {
+    "message": "界面强调色"
+  },
+  "row_uiAccent_desc": {
+    "message": "按钮、当前会话、提问气泡"
+  },
+  "row_disclaimer": {
+    "message": "隐藏免责声明"
+  },
+  "row_fade": {
+    "message": "操作按钮悬停显示"
+  },
+  "row_fade_desc": {
+    "message": "点赞、分享、复制等"
+  },
+  "row_mermaid": {
+    "message": "Mermaid 图表渲染"
+  },
+  "row_mermaid_desc": {
+    "message": "分栏式图表预览器"
+  },
+  "label_preset": {
+    "message": "风格"
+  },
+  "label_scheme": {
+    "message": "配色"
+  },
+  "advanced": {
+    "message": "高级"
+  },
+  "reset_btn": {
+    "message": "重置为当前风格"
+  },
+  "custom_css_hint": {
+    "message": "引擎规则带 !important，自定义 CSS 需同样标注才能覆盖。"
+  },
+  "font_custom_placeholder": {
+    "message": "例如 'Alibaba PuHuiTi'"
+  },
+  "palette_light": {
+    "message": "浅色色板"
+  },
+  "palette_dark": {
+    "message": "深色色板"
+  },
+  "palette_follows": {
+    "message": "跟随 Gemini"
+  },
+  "inert_hint": {
+    "message": "「原生」配色不覆盖此项"
+  },
+  "save_failed": {
+    "message": "保存失败：$1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "sync_failed": {
+    "message": "已本地保存（云同步失败：$1）",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "css_too_big": {
+    "message": "已保存 · Custom CSS 超过 8KB，仅本机生效"
+  },
+  "toast_title": {
+    "message": "Gemini Polish 已激活"
+  },
+  "toast_desc": {
+    "message": "已应用「舒适阅读」排版。点击工具栏图标可调整任意细节，或切换到「原生 Gemini」恢复原版界面。"
+  },
+  "toast_native": {
+    "message": "使用原生"
+  },
+  "toast_ok": {
+    "message": "知道了"
+  },
+  "font_group_sans": {
+    "message": "Sans-serif（无衬线）"
+  },
+  "font_group_serif": {
+    "message": "Serif（衬线）"
+  },
+  "font_group_mono": {
+    "message": "手写与等宽"
+  },
+  "font_custom_option": {
+    "message": "— 自定义字体名 —"
+  },
+  "custom": {
+    "message": "自定义"
+  },
+  "row_copymd": {
+    "message": "复制为 Markdown"
+  },
+  "row_copymd_desc": {
+    "message": "在操作栏加一个按钮，绕开 Gemini 自带的复制"
+  },
+  "copy_md": {
+    "message": "复制为 Markdown"
+  },
+  "copy_done": {
+    "message": "已复制"
+  },
+  "copy_failed": {
+    "message": "复制失败"
+  }
+}

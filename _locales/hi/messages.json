@@ -1,0 +1,204 @@
+{
+  "extName": {
+    "message": "Gemini Polish & Graph Viewer"
+  },
+  "extDesc": {
+    "message": "Google Gemini के लिए पठन अनुभव अनुकूलित करें: टाइपोग्राफ़ी, रंग योजनाएँ, इंटरफ़ेस सरलीकरण, और विभाजित-दृश्य Mermaid आरेख रेंडरर।"
+  },
+  "preset_native": {
+    "message": "मूल Gemini"
+  },
+  "preset_comfort": {
+    "message": "आरामदायक"
+  },
+  "preset_focus": {
+    "message": "फ़ोकस"
+  },
+  "scheme_native": {
+    "message": "मूल Gemini"
+  },
+  "scheme_sepia": {
+    "message": "सेपिया"
+  },
+  "scheme_amber": {
+    "message": "एम्बर"
+  },
+  "slider_fontSize": {
+    "message": "अक्षर आकार"
+  },
+  "slider_lineHeight": {
+    "message": "पंक्ति ऊँचाई"
+  },
+  "slider_paragraphSpacing": {
+    "message": "अनुच्छेद अंतर"
+  },
+  "slider_maxWidth": {
+    "message": "चौड़ाई"
+  },
+  "slider_navFontSize": {
+    "message": "साइडबार आकार"
+  },
+  "slider_navSpacing": {
+    "message": "साइडबार अंतर"
+  },
+  "section_reading": {
+    "message": "पठन (सामग्री)"
+  },
+  "section_interface": {
+    "message": "इंटरफ़ेस (ढाँचा)"
+  },
+  "section_enhance": {
+    "message": "संवर्द्धन"
+  },
+  "section_escape": {
+    "message": "आपातकालीन विकल्प"
+  },
+  "row_font": {
+    "message": "फ़ॉन्ट"
+  },
+  "row_justify": {
+    "message": "संरेखित करें"
+  },
+  "row_justify_desc": {
+    "message": "CJK पंक्ति-विराम बेहतर"
+  },
+  "row_headings": {
+    "message": "शीर्षक पैमाना"
+  },
+  "row_text": {
+    "message": "मुख्य पाठ रंग"
+  },
+  "row_link": {
+    "message": "लिंक रंग"
+  },
+  "row_emphasis": {
+    "message": "उच्चारण रंग"
+  },
+  "row_emphasis_desc": {
+    "message": "बोल्ड और उद्धरण"
+  },
+  "row_code": {
+    "message": "कोड रंग"
+  },
+  "row_code_desc": {
+    "message": "इनलाइन कोड और कोड ब्लॉक"
+  },
+  "row_border": {
+    "message": "तालिका और रेखाएँ"
+  },
+  "row_bg": {
+    "message": "पृष्ठ पृष्ठभूमि"
+  },
+  "row_uiAccent": {
+    "message": "इंटरफ़ेस उच्चारण"
+  },
+  "row_uiAccent_desc": {
+    "message": "बटन, वर्तमान चैट, प्रश्न बुलबुला"
+  },
+  "row_disclaimer": {
+    "message": "अस्वीकरण छिपाएँ"
+  },
+  "row_fade": {
+    "message": "होवर पर क्रियाएँ दिखाएँ"
+  },
+  "row_fade_desc": {
+    "message": "लाइक, शेयर, कॉपी…"
+  },
+  "row_mermaid": {
+    "message": "Mermaid आरेख"
+  },
+  "row_mermaid_desc": {
+    "message": "विभाजित-दृश्य आरेख व्यूअर"
+  },
+  "label_preset": {
+    "message": "शैली"
+  },
+  "label_scheme": {
+    "message": "रंग"
+  },
+  "advanced": {
+    "message": "उन्नत"
+  },
+  "reset_btn": {
+    "message": "वर्तमान शैली पर रीसेट करें"
+  },
+  "custom_css_hint": {
+    "message": "इंजन नियमों में !important है, इसलिए कस्टम CSS में भी इसकी आवश्यकता है।"
+  },
+  "font_custom_placeholder": {
+    "message": "उदा. 'Noto Sans Devanagari'"
+  },
+  "palette_light": {
+    "message": "हल्का पैलेट"
+  },
+  "palette_dark": {
+    "message": "गहरा पैलेट"
+  },
+  "palette_follows": {
+    "message": "Gemini का अनुसरण"
+  },
+  "inert_hint": {
+    "message": "“मूल” रंग इसे Gemini पर छोड़ते हैं"
+  },
+  "save_failed": {
+    "message": "सहेजना विफल: $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "sync_failed": {
+    "message": "इस डिवाइस पर सहेजा गया (क्लाउड सिंक विफल: $1)",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "css_too_big": {
+    "message": "सहेजा गया · कस्टम CSS 8KB से बड़ा, केवल इस डिवाइस पर"
+  },
+  "toast_title": {
+    "message": "Gemini Polish सक्रिय है"
+  },
+  "toast_desc": {
+    "message": "आरामदायक पठन टाइपोग्राफ़ी चालू है। कुछ भी बदलने के लिए टूलबार आइकन खोलें, या मूल इंटरफ़ेस के लिए “मूल Gemini” चुनें।"
+  },
+  "toast_native": {
+    "message": "मूल का उपयोग करें"
+  },
+  "toast_ok": {
+    "message": "ठीक है"
+  },
+  "font_group_sans": {
+    "message": "सैन्स-सेरिफ़"
+  },
+  "font_group_serif": {
+    "message": "सेरिफ़"
+  },
+  "font_group_mono": {
+    "message": "सुलेख और मोनोस्पेस"
+  },
+  "font_custom_option": {
+    "message": "— कस्टम फ़ॉन्ट नाम —"
+  },
+  "custom": {
+    "message": "कस्टम"
+  },
+  "row_copymd": {
+    "message": "Markdown में कॉपी करें"
+  },
+  "row_copymd_desc": {
+    "message": "Gemini की अपनी कॉपी को बायपास करने वाला बटन"
+  },
+  "copy_md": {
+    "message": "Markdown में कॉपी"
+  },
+  "copy_done": {
+    "message": "कॉपी हो गया"
+  },
+  "copy_failed": {
+    "message": "कॉपी विफल"
+  }
+}
