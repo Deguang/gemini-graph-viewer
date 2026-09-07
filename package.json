@@ -1,6 +1,6 @@
 {
   "name": "gemini-polish",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Customizable reading experience for Google Gemini: typography, minimal mode, accent colors, and a split-view Mermaid diagram renderer.",
   "scripts": {
     "test": "node tests/settings-pipeline.mjs",
